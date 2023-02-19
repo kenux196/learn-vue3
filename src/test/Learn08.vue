@@ -2,9 +2,10 @@
 import BlogPost from './BlogPost.vue';
 import ButtonCounter from './ButtonCounter.vue';
 import AlertBox from './AlertBox.vue';
+import Greeting from './Greeting.vue';
 
 export default {
-  components: { ButtonCounter, BlogPost, AlertBox },
+  components: { ButtonCounter, BlogPost, AlertBox, Greeting },
   data() {
     return {
       posts: [
@@ -14,6 +15,15 @@ export default {
       ],
       postFontSize: 1,
     };
+  },
+  // props: ['foo'],
+  created() {
+    // console.log(this.foo);
+    console.log(typeof this.title);
+  },
+  props: {
+    title: String,
+    likes: Number,
   },
 };
 </script>
@@ -26,6 +36,7 @@ export default {
       각 컴포넌트는 독립적인 count를 유지한다. 컴포넌트를 사용할 때마다 해당
       컴포넌트의 새 인스턴스가 생성되기 때문이다.
     </p>
+    <Greeting greeting-message="Hello, Greeting component" />
     <div class="grid">
       <ButtonCounter />
       <ButtonCounter />
