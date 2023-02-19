@@ -10,6 +10,7 @@ import './assets/pico.min.css';
 // import App from './test/Learn07.vue';
 // import App from './test/Learn08.vue';
 // import App from './test/Learn09.vue';
-import App from './test/Learn10.vue';
+// import App from './test/Learn10.vue';
+import App from './test/Learn11.vue';
 
 createApp(App).mount('#app');
