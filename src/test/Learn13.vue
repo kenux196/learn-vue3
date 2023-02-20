@@ -1,4 +1,6 @@
 <script setup>
+import FancyButton from './FancyButton.vue';
+import AwesomIcon from './AwesomIcon.vue';
 import { computed, ref } from 'vue';
 import { useFetch } from './fetch.js';
 
@@ -23,4 +25,8 @@ const { data, error, retry } = useFetch(url);
     <pre>{{ data }}</pre>
   </div>
   <div v-else>로딩...</div>
+  <FancyButton>
+    <span style="color: red"> 클릭하기 </span>
+    <AwesomIcon />
+  </FancyButton>
 </template>
