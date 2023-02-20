@@ -1,6 +1,7 @@
 <script setup>
 import { ref, provide, readonly } from 'vue';
 import { myInjectionKey } from './keys.js';
+import { useMouse } from './mouse.js';
 import Child from './Child.vue';
 
 const message = ref('Hello');
@@ -26,9 +27,12 @@ const count = readonly(100);
 provide(myInjectionKey, {
   count,
 });
+
+const { x, y } = useMouse();
 </script>
 
 <template>
   <input v-model="message" />
   <Child />
+  <p>mouse position: {{ x }}, {{ y }}</p>
 </template>
