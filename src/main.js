@@ -13,6 +13,7 @@ import './assets/pico.min.css';
 // import App from './test/Learn10.vue';
 // import App from './test/Learn11.vue';
 // import App from './test/Learn12.vue';
-import App from './test/Learn13.vue';
+// import App from './test/Learn13.vue';
+import App from './test/Router.vue';
 
 createApp(App).mount('#app');
