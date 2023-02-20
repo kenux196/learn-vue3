@@ -1,8 +1,12 @@
 <template>
   <h1>Composition API</h1>
-  <p>{{ countWithUnit }}</p>
-  <button @click="increase">Increase</button>
-  <button @click="decrease">Decrease</button>
+  <div class="grid">
+    <div></div>
+    <button @click="decrease">Decrease</button>
+    <p style="text-align: center">{{ countWithUnit }}</p>
+    <button @click="increase">Increase</button>
+    <div></div>
+  </div>
 </template>
 
 <script>
