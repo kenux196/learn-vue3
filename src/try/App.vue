@@ -1,5 +1,12 @@
 <script setup>
+import { provide } from 'vue';
+import { store } from './store/store.js';
+
+import WelcomeMessage from './components/WelcomeMessage.vue';
+
 const today = new Date();
+// const user = provide('user', prompt('이름을 입력하세요.'));
+// store.setUser(prompt('이름을 입력하세요'));
 </script>
 
 <template>
@@ -11,6 +18,7 @@ const today = new Date();
         UTC - {{ today.toUTCString() }}
       </p>
     </div>
+    <WelcomeMessage />
   </main>
 </template>
 
