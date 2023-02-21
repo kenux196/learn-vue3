@@ -1,16 +1,27 @@
 <script setup>
+import { computed, reactive, ref } from 'vue';
 import { store } from '../store/store';
 
-const allCheck = false;
+const allCheckState = ref(false);
+const isChecked = computed(() => {
+  console.log(allCheckState.value);
+  return allCheckState.value ? true : false;
+});
 
-function needCheck() {
-  return allCheck;
+function updateChecked() {
+  return (allCheckState.value = !allCheckState.value);
 }
 </script>
 <template>
   <table>
     <thead>
-      <th><input type="checkbox" v-model="allCheck" /></th>
+      <th>
+        <input
+          type="checkbox"
+          :checked="allCheckState"
+          @click="updateChecked()"
+        />
+      </th>
       <th>#</th>
 
       <th>제목</th>
@@ -21,7 +32,7 @@ function needCheck() {
     <tbody>
       <tr v-for="book in store.books" :key="book.id">
         <td>
-          <input type="checkbox" :checked="needCheck()" />
+          <input type="checkbox" :checked="isChecked" />
         </td>
         <td>
           <a href="#">{{ book.id }}</a>
