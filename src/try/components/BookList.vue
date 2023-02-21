@@ -1,10 +1,18 @@
 <script setup>
 import { store } from '../store/store';
+
+const allCheck = false;
+
+function needCheck() {
+  return allCheck;
+}
 </script>
 <template>
   <table>
     <thead>
+      <th><input type="checkbox" v-model="allCheck" /></th>
       <th>#</th>
+
       <th>제목</th>
       <th>작가</th>
       <th>가격</th>
@@ -12,6 +20,9 @@ import { store } from '../store/store';
     </thead>
     <tbody>
       <tr v-for="book in store.books" :key="book.id">
+        <td>
+          <input type="checkbox" :checked="needCheck()" />
+        </td>
         <td>
           <a href="#">{{ book.id }}</a>
         </td>
@@ -25,3 +36,4 @@ import { store } from '../store/store';
     </tbody>
   </table>
 </template>
+<style scoped></style>
