@@ -56,7 +56,13 @@ function selectedBookList() {
 </script>
 
 <template>
-  <table>
+  <div class="grid">
+    <p style="font-size: xx-large">보유 도서 목록</p>
+    <p role="button" @click="openBookForm()">add</p>
+    <p role="button" @click="removeBooks()">remove</p>
+    <p role="button" @click="modifyBook()">modify</p>
+  </div>
+  <table role="grid">
     <thead>
       <th>
         <input
@@ -93,12 +99,10 @@ function selectedBookList() {
       </tr>
     </tbody>
   </table>
-  <div class="grid">
-    <p role="button" @click="openBookForm()">add</p>
-    <p role="button" @click="removeBooks()">remove</p>
-    <p role="button" @click="modifyBook()">modify</p>
-    <p role="button" class="outline">prev</p>
-    <p role="button" class="outline">next</p>
+  <div class="grid page-num">
+    <a>prev</a>
+    <a v-for="i in 10" :key="i">{{ i }}</a>
+    <a>next</a>
   </div>
   <BookAddForm ref="bookAddForm" @added-book="updateBooks" />
 </template>
