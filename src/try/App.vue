@@ -4,6 +4,7 @@ import { store } from './store/store.js';
 
 import WelcomeMessage from './components/WelcomeMessage.vue';
 import BookList from './components/BookList.vue';
+import TodoDetailView from './components/TodoDetailView.vue';
 
 const today = new Date();
 // const user = provide('user', prompt('이름을 입력하세요.'));
@@ -20,7 +21,10 @@ const today = new Date();
       </p>
     </div>
     <WelcomeMessage />
-    <BookList />
+    <BookList /><br />
+    <div>
+      <TodoDetailView />
+    </div>
   </main>
 </template>
 

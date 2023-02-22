@@ -15,6 +15,8 @@ import './assets/pico.min.css';
 // import App from './test/Learn12.vue';
 // import App from './test/Learn13.vue';
 // import App from './test/Router.vue';
+
 import App from './try/App.vue';
+// import App from './App.vue';
 
 createApp(App).mount('#app');
