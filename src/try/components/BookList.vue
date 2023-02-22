@@ -1,36 +1,31 @@
 <script setup>
-import { computed, inject, ref } from 'vue';
+import { computed, ref, reactive } from 'vue';
 import { store } from '../store/store';
-import { Book } from '../js/Book';
 import BookAddForm from './BookAddForm.vue';
 
-const allCheckState = ref(false);
+const state = reactive({
+  allCheckState: false,
+  books: null,
+});
+
 const isChecked = computed(() => {
-  console.log(allCheckState.value);
-  return allCheckState.value ? true : false;
+  console.log(state.allCheckState);
+  return state.allCheckState ? true : false;
 });
 
 function updateChecked() {
-  return (allCheckState.value = !allCheckState.value);
+  return (state.allCheckState = !state.allCheckState);
 }
 
 const repository = store.bookRepository;
-const books = computed(() => getBooks());
+state.books = getBooks();
 
 function getBooks() {
   return repository.findAll();
 }
 
-function addBook() {
-  console.log('book 추가하기');
-  const book = Book.createBook(
-    '동에 번쩍, 서에 번쩍',
-    '홍길동',
-    13000,
-    new Date().toLocaleDateString()
-  );
-  repository.save(book);
-  alert('새로운 책이 추가되었습니다.');
+function updateBooks() {
+  state.books = getBooks();
 }
 
 const bookAddForm = ref('');
@@ -39,13 +34,14 @@ function openBookForm() {
   bookAddForm.value.openBookForm();
 }
 </script>
+
 <template>
   <table>
     <thead>
       <th>
         <input
           type="checkbox"
-          :checked="allCheckState"
+          :checked="state.allCheckState"
           @click="updateChecked()"
         />
       </th>
@@ -56,7 +52,7 @@ function openBookForm() {
       <th>발행일</th>
     </thead>
     <tbody>
-      <tr v-for="book in books" :key="book.id">
+      <tr v-for="book in state.books" :key="book.id">
         <td>
           <input type="checkbox" :checked="isChecked" />
         </td>
@@ -73,12 +69,12 @@ function openBookForm() {
     </tbody>
   </table>
   <div class="grid">
-    <p role="button" @click="addBook()">add</p>
-    <p role="button" @click="openBookForm()">remove</p>
+    <p role="button" @click="openBookForm()">add</p>
+    <p role="button">remove</p>
     <p role="button">modify</p>
     <p role="button" class="outline">prev</p>
     <p role="button" class="outline">next</p>
   </div>
-  <BookAddForm ref="bookAddForm" />
+  <BookAddForm ref="bookAddForm" @added-book="updateBooks" />
 </template>
 <style scoped></style>

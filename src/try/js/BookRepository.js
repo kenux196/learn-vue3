@@ -1,4 +1,5 @@
 import { Book } from './Book.js';
+import { convertISODateString } from './DateTimeFormmat.js';
 
 export class BookRepository {
   constructor() {
@@ -34,7 +35,7 @@ export class BookRepository {
       const title = 'book ' + id;
       const author = 'kenux';
       const price = 10000;
-      const publishDate = new Date(2022, id, 13).toLocaleDateString();
+      const publishDate = new Date(2022, id, 13).toISOString().split('T')[0];
       const book = Book.createBook(title, author, price, publishDate);
       console.log('created book ' + book.title);
       this.save(book);
@@ -52,7 +53,7 @@ const book = Book.createBook(
   '슈퍼맨',
   '김작가',
   20000,
-  new Date().toLocaleDateString()
+  convertISODateString(new Date())
 );
 bookMemoryRepository.updateById(1, book);
 console.log(bookMemoryRepository.findById(1));
