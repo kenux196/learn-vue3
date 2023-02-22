@@ -20,8 +20,14 @@ export class BookRepository {
   }
 
   save(book) {
-    book.setId(this.generateId());
+    if (book.id == undefined || book.id == '' || book.id == null) {
+      book.setId(this.generateId());
+    }
     this.books.set(book.id, book);
+  }
+
+  delete(book) {
+    this.books.delete(book.id);
   }
 
   generateId() {
@@ -49,13 +55,9 @@ const books = bookMemoryRepository.findAll();
 console.log(books);
 books.forEach((book) => console.log(book));
 
-const book = Book.createBook(
-  '슈퍼맨',
-  '김작가',
-  20000,
-  convertISODateString(new Date())
-);
-bookMemoryRepository.updateById(1, book);
-console.log(bookMemoryRepository.findById(1));
-// console.log(books.keys());
-// console.log(books.values());
+function testUpdate() {
+  const book = bookMemoryRepository.findById(1);
+  book.title = 'newTitle';
+  bookMemoryRepository.save(book);
+}
+testUpdate();
