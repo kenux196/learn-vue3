@@ -4,17 +4,27 @@ import { store } from '../store/store';
 import BookAddForm from './BookAddForm.vue';
 
 const state = reactive({
-  allCheckState: false,
+  selectedAll: false,
   books: null,
+  selectedBook: [],
 });
 
 const isChecked = computed(() => {
-  console.log(state.allCheckState);
+  console.log(state.selectedAll);
   return state.allCheckState ? true : false;
 });
 
-function updateChecked() {
-  return (state.allCheckState = !state.allCheckState);
+function selectAll() {
+  console.log('[debug] updateChecked');
+  if (state.selectedAll) {
+    state.selectedAll = false;
+    state.selectedBook.splice(0, state.selectedBook.length);
+  } else {
+    state.selectedAll = true;
+    state.books.forEach((book) => {
+      state.selectedBook.push(book.id);
+    });
+  }
 }
 
 const repository = store.bookRepository;
@@ -28,10 +38,25 @@ function updateBooks() {
   state.books = getBooks();
 }
 
+function modifyBook() {
+  console.log('[debug] Modify book');
+}
+
+function removeBooks() {
+  console.log('[debug] remove books ' + state.selectedBook);
+  state.selectedBook.forEach((id) => repository.delete(id));
+  state.selectedAll = false;
+  updateBooks();
+}
+
 const bookAddForm = ref('');
 function openBookForm() {
   console.log('Call parent openBookForm()');
   bookAddForm.value.openBookForm();
+}
+
+function selectedBookList() {
+  console.log('[debug] selected book :' + state.selectedBook);
 }
 </script>
 
@@ -41,8 +66,8 @@ function openBookForm() {
       <th>
         <input
           type="checkbox"
-          :checked="state.allCheckState"
-          @click="updateChecked()"
+          :checked="state.selectedAll"
+          @change="selectAll()"
         />
       </th>
       <th>#</th>
@@ -54,7 +79,12 @@ function openBookForm() {
     <tbody>
       <tr v-for="book in state.books" :key="book.id">
         <td>
-          <input type="checkbox" :checked="isChecked" />
+          <input
+            type="checkbox"
+            v-model="state.selectedBook"
+            :value="book.id"
+            @change="selectedBookList()"
+          />
         </td>
         <td>
           <a href="#">{{ book.id }}</a>
@@ -70,8 +100,8 @@ function openBookForm() {
   </table>
   <div class="grid">
     <p role="button" @click="openBookForm()">add</p>
-    <p role="button">remove</p>
-    <p role="button">modify</p>
+    <p role="button" @click="removeBooks()">remove</p>
+    <p role="button" @click="modifyBook()">modify</p>
     <p role="button" class="outline">prev</p>
     <p role="button" class="outline">next</p>
   </div>
