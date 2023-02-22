@@ -1,7 +1,8 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, inject, ref } from 'vue';
 import { store } from '../store/store';
 import { Book } from '../js/Book';
+import BookAddForm from './BookAddForm.vue';
 
 const allCheckState = ref(false);
 const isChecked = computed(() => {
@@ -30,6 +31,12 @@ function addBook() {
   );
   repository.save(book);
   alert('새로운 책이 추가되었습니다.');
+}
+
+const bookAddForm = ref('');
+function openBookForm() {
+  console.log('Call parent openBookForm()');
+  bookAddForm.value.openBookForm();
 }
 </script>
 <template>
@@ -67,10 +74,11 @@ function addBook() {
   </table>
   <div class="grid">
     <p role="button" @click="addBook()">add</p>
-    <p role="button">remove</p>
+    <p role="button" @click="openBookForm()">remove</p>
     <p role="button">modify</p>
     <p role="button" class="outline">prev</p>
     <p role="button" class="outline">next</p>
   </div>
+  <BookAddForm ref="bookAddForm" />
 </template>
 <style scoped></style>
