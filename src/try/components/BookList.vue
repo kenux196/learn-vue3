@@ -2,6 +2,7 @@
 import { computed, ref, reactive } from 'vue';
 import { store } from '../store/store';
 import BookAddForm from './BookAddForm.vue';
+import Progress from './Progress.vue';
 
 const repository = store.bookRepository;
 const state = reactive({
@@ -31,6 +32,7 @@ function getBooks() {
 
 function updateBooks() {
   state.books = getBooks();
+  showProgressBar();
 }
 
 function modifyBook() {
@@ -38,6 +40,7 @@ function modifyBook() {
   if (state.selectedBook.length > 1) {
     alert('여러 항목을 동시에 수정할 수 없습니다. 하나만 선택하세요.');
   }
+  showProgressBar();
 }
 
 function removeBooks() {
@@ -51,6 +54,14 @@ const bookAddForm = ref('');
 function openBookForm() {
   console.log('Call parent openBookForm()');
   bookAddForm.value.openBookForm();
+}
+
+const progress = ref('');
+function showProgressBar() {
+  progress.value.show();
+  setTimeout(() => {
+    progress.value.hide();
+  }, 1000);
 }
 
 function selectedBookList() {
@@ -108,5 +119,6 @@ function selectedBookList() {
     <a>next</a>
   </div>
   <BookAddForm ref="bookAddForm" @added-book="updateBooks" />
+  <Progress ref="progress" />
 </template>
 <style scoped></style>
