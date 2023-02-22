@@ -20,8 +20,18 @@ export class BookRepository {
     this.books.set(book.id, book);
   }
 
-  delete(book) {
-    this.books.delete(book.id);
+  delete(id) {
+    this.books.delete(id);
+  }
+
+  findByTitle(title) {
+    const books = [];
+    this.books.forEach((book) => {
+      if (book.title.indexOf(title) > -1) {
+        books.push(book);
+      }
+    });
+    return books;
   }
 
   generateId() {
@@ -57,3 +67,16 @@ function testUpdateBook() {
   bookMemoryRepository.save(book);
 }
 testUpdateBook();
+
+function testDeletBook() {
+  const book = bookMemoryRepository.findById(2);
+  bookMemoryRepository.delete(book.id);
+}
+testDeletBook();
+
+function testFindByTitle() {
+  console.log('test find by title');
+  const books = bookMemoryRepository.findByTitle('book');
+  books.forEach((book) => console.log(book));
+}
+testFindByTitle();
