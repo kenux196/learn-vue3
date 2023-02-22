@@ -3,16 +3,14 @@ import { computed, ref, reactive } from 'vue';
 import { store } from '../store/store';
 import BookAddForm from './BookAddForm.vue';
 
+const repository = store.bookRepository;
 const state = reactive({
   selectedAll: false,
   books: null,
   selectedBook: [],
 });
 
-const isChecked = computed(() => {
-  console.log(state.selectedAll);
-  return state.allCheckState ? true : false;
-});
+state.books = getBooks();
 
 function selectAll() {
   console.log('[debug] updateChecked');
@@ -26,9 +24,6 @@ function selectAll() {
     });
   }
 }
-
-const repository = store.bookRepository;
-state.books = getBooks();
 
 function getBooks() {
   return repository.findAll();
