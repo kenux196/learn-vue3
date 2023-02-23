@@ -1,3 +1,4 @@
+import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 import './assets/pico.min.css';
 
@@ -19,4 +20,8 @@ import './assets/pico.min.css';
 import App from './try/App.vue';
 // import App from './App.vue';
 
-createApp(App).mount('#app');
+const pinia = createPinia();
+const app = createApp(App);
+
+app.use(pinia);
+app.mount('#app');
