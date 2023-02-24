@@ -33,6 +33,7 @@ import { onMounted, ref } from 'vue';
 import ToDoDetailModal from './ToDoDetailModal.vue';
 
 const todoList = ref(null);
+const todoData = ref(null);
 
 async function fetchData() {
   todoList.value = null;
@@ -46,14 +47,23 @@ async function fetchData() {
   }
 }
 
+async function getDetail(id) {
+  console.log(`getDetail(${id})`);
+  todoData.value = null;
+  const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  todoData.value = await res.json();
+  console.log(todoData.value);
+}
+
 onMounted(() => {
   fetchData();
 });
 
 const todoDetailModal = ref('');
 
-function openDetail(id) {
+async function openDetail(id) {
   console.log('open detail : ' + id);
-  todoDetailModal.value.open(id);
+  await getDetail(id);
+  todoDetailModal.value.open(todoData.value);
 }
 </script>
