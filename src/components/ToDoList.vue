@@ -24,7 +24,7 @@
     </table>
   </div>
   <div>
-    <ToDoDetailModal :open="showDetail" />
+    <ToDoDetailModal ref="todoDetailModal" />
   </div>
 </template>
 
@@ -50,10 +50,10 @@ onMounted(() => {
   fetchData();
 });
 
-const showDetail = ref(null);
+const todoDetailModal = ref('');
 
 function openDetail(id) {
   console.log('open detail : ' + id);
-  showDetail.value = id;
+  todoDetailModal.value.open(id);
 }
 </script>
