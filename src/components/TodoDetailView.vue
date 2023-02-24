@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 
 const todoId = ref(1);
 const todoData = ref(null);
@@ -12,7 +12,9 @@ async function fetchData() {
   todoData.value = await res.json();
 }
 
-fetchData();
+onMounted(() => {
+  fetchData();
+});
 
 watch(todoId, (newTodoId) => {
   fetchData();
