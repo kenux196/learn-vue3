@@ -1,5 +1,5 @@
 <script setup>
-import TodoDetailView from '../components/TodoDetailView.vue';
+import TodoDetailView from '../components/ToDoDetail.vue';
 import ToDoList from '../components/ToDoList.vue';
 </script>
 <template>
