@@ -1,39 +1,25 @@
 <script setup>
-import { provide } from 'vue';
-import { store } from './store/store.js';
-
-import WelcomeMessage from './components/WelcomeMessage.vue';
-import BookList from './components/BookList.vue';
-import TodoDetailView from './components/TodoDetailView.vue';
-import StoreSample from './components/StoreSample.vue';
-
-const today = new Date();
-// const user = provide('user', prompt('이름을 입력하세요.'));
-// store.setUser(prompt('이름을 입력하세요'));
+import HomeView from './views/HomeView.vue';
 </script>
 
 <template>
+  <header class="container">
+    <nav>
+      <ul>
+        <li><h3>Learn Vue3</h3></li>
+      </ul>
+      <ul>
+        <li>
+          <router-link to="/">Home</router-link>
+        </li>
+        <li>
+          <router-link to="/todo-list">ToDo</router-link>
+        </li>
+        <li><router-link to="/store-sample">Store-Test</router-link></li>
+      </ul>
+    </nav>
+  </header>
   <main class="container">
-    <div class="grid">
-      <h1 class="page-title">Vue3 Playground</h1>
-      <p>
-        KOREA - {{ today.toLocaleString() }}<br />
-        UTC - {{ today.toUTCString() }}
-      </p>
-    </div>
-    <WelcomeMessage />
-    <BookList /><br />
-    <div>
-      <TodoDetailView />
-    </div>
-    <div>
-      <StoreSample />
-    </div>
+    <RouterView />
   </main>
 </template>
-
-<style scoped>
-.page-title {
-  color: gray;
-}
-</style>
