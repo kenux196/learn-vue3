@@ -1,5 +1,4 @@
 <script setup>
-import { inject } from 'vue';
 import { User } from '../js/user';
 import { store } from '../store/store.js';
 // const user = inject('user');
