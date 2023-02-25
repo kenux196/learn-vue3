@@ -1,10 +1,7 @@
 <script setup>
 import WelcomeMessage from '../components/WelcomeMessage.vue';
-import BookList from '../components/BookList.vue';
 
 const today = new Date();
-// const user = provide('user', prompt('이름을 입력하세요.'));
-// store.setUser(prompt('이름을 입력하세요'));
 </script>
 
 <template>
@@ -17,7 +14,6 @@ const today = new Date();
       </p>
     </div>
     <WelcomeMessage />
-    <BookList /><br />
   </main>
 </template>
 

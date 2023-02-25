@@ -9,6 +9,10 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      path: '/book',
+      component: () => import('../views/BookView.vue'),
+    },
+    {
       path: '/todo-list',
       component: () => import('../views/TodoListView.vue'),
     },
