@@ -8,17 +8,17 @@
         <th>userId</th>
       </thead>
       <tbody>
-        <tr v-for="item in todoList" :key="item.id">
+        <tr v-for="todoItem in todoList" :key="todoItem.id">
           <td>
-            <a @click="openDetail(item.id)">{{ item.id }}</a>
+            <a @click="openDetail(todoItem.id)">{{ todoItem.id }}</a>
           </td>
           <td>
-            <a @click="openDetail(item.id)">
-              {{ item.title }}
+            <a @click="openDetail(todoItem.id)">
+              {{ todoItem.title }}
             </a>
           </td>
-          <td><input type="checkbox" :checked="item.completed" /></td>
-          <td>{{ item.userId }}</td>
+          <td><input type="checkbox" :checked="todoItem.completed" /></td>
+          <td>{{ todoItem.userId }}</td>
         </tr>
       </tbody>
     </table>
