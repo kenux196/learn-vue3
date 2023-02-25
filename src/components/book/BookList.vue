@@ -1,8 +1,8 @@
 <script setup>
 import { computed, ref, reactive } from 'vue';
-import { store } from '../store/store';
+import { store } from '../../store/store';
 import BookAddForm from './BookAddForm.vue';
-import Progress from './Progress.vue';
+import Progress from '../common/Progress.vue';
 
 const repository = store.bookRepository;
 const state = reactive({
