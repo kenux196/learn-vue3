@@ -36,8 +36,8 @@
 </template>
 <script setup>
 import { ref, reactive } from 'vue';
-import { Book } from '../js/Book';
-import { bookMemoryRepository } from '../js/BookRepository';
+import { Book } from '../../js/Book';
+import { bookMemoryRepository } from '../../js/BookRepository';
 
 const emit = defineEmits(['addedBook']);
 

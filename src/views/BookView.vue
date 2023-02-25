@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import BookList from '../components/BookList.vue';
+import BookList from '../components/book/BookList.vue';
 </script>
 
 <style lang="scss" scoped></style>
