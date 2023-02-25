@@ -20,6 +20,10 @@ const router = createRouter({
       path: '/store-sample',
       component: () => import('../views/StoreSampleView.vue'),
     },
+    {
+      path: '/color',
+      component: () => import('../views/ColorView.vue'),
+    },
   ],
 });
 
