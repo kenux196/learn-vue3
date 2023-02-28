@@ -24,6 +24,10 @@ const router = createRouter({
       path: '/color',
       component: () => import('../views/ColorView.vue'),
     },
+    {
+      path: '/utils',
+      component: () => import('../views/UtilsView.vue'),
+    },
   ],
 });
 
