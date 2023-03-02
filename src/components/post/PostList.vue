@@ -21,6 +21,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
+import axios from 'axios';
 
 const url = 'http://jsonplaceholder.typicode.com/posts';
 
@@ -28,29 +29,15 @@ const posts = ref('');
 const post = ref('');
 
 async function fetchData() {
-  const res = await fetch(url);
-  posts.value = await res.json();
+  axios.get(url).then((res) => (posts.value = res.data));
 }
 
-const fetchContent = async (id) => {
-  fetch(url + '/' + id)
-    .then((res) => {
-      console.log(res.status);
-      if (!res.ok) {
-        throw new Error(`오류 발생: ${res.status}`);
-      }
-      return res.json();
-    })
-    .then((json) => {
-      post.value = json;
-      console.log(post.value);
-      alert(post.value.body);
-    });
+const showPostContent = async (id) => {
+  axios.get(url + '/' + id).then((res) => {
+    post.value = res.data;
+    alert(post.value.body);
+  });
 };
-
-function showPostContent(id) {
-  fetchContent(id);
-}
 
 onMounted(() => {
   fetchData();
