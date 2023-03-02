@@ -1,7 +1,3 @@
-<script setup>
-import HomeView from './views/HomeView.vue';
-</script>
-
 <template>
   <header class="container">
     <nav>
@@ -18,6 +14,7 @@ import HomeView from './views/HomeView.vue';
         <li>
           <router-link to="/todo-list">ToDo</router-link>
         </li>
+        <li><router-link to="/posts">Posts</router-link></li>
         <li><router-link to="/store-sample">Store-Test</router-link></li>
         <li><router-link to="/color">Color</router-link></li>
         <li><router-link to="/utils">Utils</router-link></li>

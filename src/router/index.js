@@ -17,6 +17,10 @@ const router = createRouter({
       component: () => import('../views/TodoListView.vue'),
     },
     {
+      path: '/posts',
+      component: () => import('../views/PostsView.vue'),
+    },
+    {
       path: '/store-sample',
       component: () => import('../views/StoreSampleView.vue'),
     },
