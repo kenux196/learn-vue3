@@ -22,6 +22,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import axios from 'axios';
+import axiosGet from '../../js/HttpUtils';
 
 const url = 'http://jsonplaceholder.typicode.com/posts';
 
@@ -33,10 +34,13 @@ async function fetchData() {
 }
 
 const showPostContent = async (id) => {
-  axios.get(url + '/' + id).then((res) => {
-    post.value = res.data;
-    alert(post.value.body);
-  });
+  post.value = await axiosGet(url + '/' + id);
+  alert(post.value.body);
+
+  // axios.get(url + '/' + id).then((res) => {
+  //   post.value = res.data;
+  //   alert(post.value.body);
+  // });
 };
 
 onMounted(() => {
