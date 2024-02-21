@@ -8,7 +8,7 @@ const checked = ref(false);
 const checkedNames = ref([]);
 const picked = ref('');
 const selectedName = ref('');
-const selected = ref('최미정');
+const selected = ref([]);
 const options = ref([
   { text: '하나', value: '장원영' },
   { text: '둘', value: '안유진' },
@@ -61,7 +61,7 @@ const options = ref([
       <option>상규</option>
     </select>
     <div>선택됨: {{ selected }}</div>
-    <select v-model="selected">
+    <select v-model="selected" multiple>
       <option v-for="option in options" :value="option.value">
         {{ option.text }}
       </option>
