@@ -3,7 +3,8 @@ import { createApp } from 'vue';
 import piniaPersist from 'pinia-plugin-persist';
 import './assets/pico.min.css';
 
-import App from './App.vue';
+// import App from './App.vue';
+import App from './test/Learn04.vue';
 import router from './router';
 
 const pinia = createPinia();

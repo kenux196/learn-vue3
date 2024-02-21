@@ -68,7 +68,9 @@ function showHiddenMessage() {
     </div>
     <WelcomeMessage />
     <a v-on:click="showHiddenMessage()">여기를 누르면? {{ count }}</a>
-    <p v-if="showMessage">오늘은 기분이 어떤가요?</p>
+    <span style="margin-left: 10px" v-if="showMessage">
+      오늘은 기분이 어떤가요?</span
+    >
     <div>
       <a v-bind:href="someUrl">네이버 : {{ someUrl }}</a>
     </div>
