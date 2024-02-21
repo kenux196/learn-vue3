@@ -1,33 +1,25 @@
-<script>
-export default {
-  data() {
-    return {
-      question: '',
-      answer: '질문에는 일반적으로 물음표가 포함됩니다.',
-    };
-  },
-  watch: {
-    // 질문이 변경될 때마다 이 함수가 실행됩니다.
-    question(newQuestion, oldQuestion) {
-      console.log('watch-question');
-      if (newQuestion.includes('?')) {
-        console.log('watch-question has "?"');
-        this.getAnswer();
-      }
-    },
-  },
-  methods: {
-    async getAnswer() {
-      this.answer = 'thinking...';
-      try {
-        const res = await fetch('https://yesno.wtf/api');
-        this.answer = (await res.json()).answer === 'yes' ? '네' : '아니오';
-      } catch (error) {
-        this.answer = '에러! API에 연결할 수 없습니다. ' + error;
-      }
-    },
-  },
-};
+<script setup>
+import { ref, watch } from 'vue';
+
+const question = ref('');
+const answer = ref('질문에는 일반적으로 물음표가 포함됩니다.');
+const imgUrl = ref('');
+
+watch(question, async (newQuestion, oldQuestion) => {
+  if (newQuestion.indexOf('?') > -1) {
+    answer.value = '생각중...';
+    try {
+      const body = await fetch('https://yesno.wtf/api').then((res) => {
+        return res.json();
+      });
+      console.log(body);
+      answer.value = body.answer === 'yes' ? '네' : '아니오';
+      imgUrl.value = body.image;
+    } catch (error) {
+      answer.value = '에러! API에 연결할 수 없습니다. ' + error;
+    }
+  }
+});
 </script>
 
 <template>
@@ -40,5 +32,6 @@ export default {
       </span>
     </p>
     <p>대답: {{ answer }}</p>
+    <img v-bind:src="imgUrl" />
   </div>
 </template>
