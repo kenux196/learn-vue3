@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import WelcomeMessage from '../components/WelcomeMessage.vue';
 
 const today = new Date();
@@ -13,7 +13,19 @@ const person = {
 };
 const state = reactive({ number: 0 });
 const personProxy = reactive(person);
-// const primitive = reactive(1); // reactive는 기본형 미지원. only 객체, 배열, 컬렉션 타입만 가능
+// const primitive = reactive(1);
+// reactive는 기본형 미지원. only 객체, 배열, 컬렉션 타입만 가능
+// 이런 저런 이유로 reactive 보다는 ref 사용을 권장함.
+
+const author = reactive({
+  name: '밥 프록터',
+  books: ['book1', 'book2', 'book3'],
+});
+
+// 반응형 데이터를 포함하는 복잡한 논리의 경우, computed(계산된 속성)를 사용하는 것이 좋다.
+const publishedBooksMessage = computed(() => {
+  return author.books.length > 0 ? 'yes' : 'no';
+});
 
 function showHiddenMessage() {
   console.log('링크를 눌렀네요~~~');
@@ -43,6 +55,11 @@ function showHiddenMessage() {
     <button @click="personProxy.age++">
       {{ personProxy.name }}: {{ personProxy.age }}
     </button>
+    <div>
+      <p>
+        {{ author.name }}은(는) 집필한 책이 있다: {{ publishedBooksMessage }}
+      </p>
+    </div>
   </main>
 </template>
 
