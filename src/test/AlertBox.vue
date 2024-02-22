@@ -2,7 +2,7 @@
   <div class="alert-box">
     <strong>이것은 데모용 오류입니다.</strong>
     <br />
-    <slot />
+    <slot></slot>
   </div>
 </template>
 
