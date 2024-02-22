@@ -4,7 +4,7 @@ import piniaPersist from 'pinia-plugin-persist';
 // import './assets/pico.min.css';
 
 // import App from './App.vue';
-import App from './test/Learn08.vue';
+import App from './test/Sample01.vue';
 import router from './router';
 
 const pinia = createPinia();
