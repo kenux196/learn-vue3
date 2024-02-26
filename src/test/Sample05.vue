@@ -10,14 +10,15 @@ const groceryList = ref([
   { id: 2, text: 'Whatever else humans are supposed to eat' },
   { id: 3, text: '동해 해물탕' },
 ]);
-const title = '전체 리스트 갯수는 ';
+const message = '전체 리스트 갯수는 ';
+const status = 'aaaa';
 </script>
 <template>
   <h2>Simple Component</h2>
   <SampleChild01
-    :message-title="title"
-    :number="groceryList.length"
-    :state="warning"
+    :message="message"
+    :size="groceryList.length"
+    :status="status"
   />
   <ol>
     <SampleTodoItem

@@ -1,4 +1,4 @@
-import { Book } from './Book.js';
+import { Book } from './book.js';
 
 export class BookRepository {
   constructor() {
