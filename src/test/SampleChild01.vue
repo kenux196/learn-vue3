@@ -13,11 +13,21 @@ const props = defineProps({
     default: false,
   },
 });
+defineEmits(['increaseBy']);
+const model = defineModel('greeting');
+const firstName = defineModel('firstName');
+const lastName = defineModel('lastName');
 console.log(props);
 </script>
 <template>
   <h2>
-    {{ message }} {{ size }} / status: {{ status }} / 인증?
-    {{ isAuthenticated }}
+    {{ props.message }} {{ props.size }} / status: {{ props.status }} / 인증?
+    {{ props.isAuthenticated }}
   </h2>
+  <button @click="$emit('increaseBy', 1)">IncreaseBy 1</button>
+  <span>My input: </span><input type="text" v-model="model" />
+  <div>
+    이름: <input type="text" v-model="firstName" /> 성:
+    <input type="text" v-model="lastName" />
+  </div>
 </template>
