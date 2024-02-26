@@ -13,5 +13,5 @@ const show = ref(true);
     <li v-for="item of list">{{ item }}</li>
   </ul>
   <p v-else-if="list.length">List is not empty, but hidden.</p>
-  <p v-else>List is empty.</p>
+  <p v-else>List is empty</p>
 </template>
