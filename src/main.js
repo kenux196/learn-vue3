@@ -1,10 +1,10 @@
 import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 import piniaPersist from 'pinia-plugin-persist';
-// import './assets/pico.min.css';
+import './assets/pico.min.css';
 
-// import App from './App.vue';
-import App from './test/SampleSlotParent.vue';
+import App from './App.vue';
+// import App from './test/SampleSlotParent.vue';
 import router from './router';
 
 const pinia = createPinia();
