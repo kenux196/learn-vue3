@@ -39,6 +39,7 @@ function modifyBook() {
   console.log('[debug] Modify book');
   if (state.selectedBook.length > 1) {
     alert('여러 항목을 동시에 수정할 수 없습니다. 하나만 선택하세요.');
+    return;
   }
   showProgressBar();
 }
