@@ -14,5 +14,6 @@ console.log(testList);
 </script>
 <template>
   <h1>API Test App</h1>
+  <p>{{ testList.length }}</p>
   <p v-for="item in testList">{{ item.name }}</p>
 </template>
