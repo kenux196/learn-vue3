@@ -18,7 +18,8 @@
         <li><router-link to="/store-sample">Store-Test</router-link></li>
         <li><router-link to="/color">Color</router-link></li>
         <li><router-link to="/utils">Utils</router-link></li>
-        <li><router-link to="/test">Test</router-link></li>
+        <!-- <li><router-link to="/test">Test</router-link></li> -->
+        <li><router-link to="/api-test">API TEST</router-link></li>
       </ul>
     </nav>
   </header>

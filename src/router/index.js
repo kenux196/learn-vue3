@@ -32,6 +32,10 @@ const router = createRouter({
       path: '/utils',
       component: () => import('../views/UtilsView.vue'),
     },
+    {
+      path: '/api-test',
+      component: () => import('../views/ApiTestView.vue'),
+    },
   ],
 });
 
