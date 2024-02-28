@@ -33,8 +33,8 @@ const router = createRouter({
       component: () => import('../views/UtilsView.vue'),
     },
     {
-      path: '/api-test',
-      component: () => import('../views/ApiTestView.vue'),
+      path: '/json-test',
+      component: () => import('../views/JsonLoadView.vue'),
     },
   ],
 });
