@@ -58,8 +58,14 @@ function deleteUser() {
 <template>
   <h1>Json file load test</h1>
   <p>전체 리스트 길이: {{ userList.length }}</p>
-  <button @click="sortJoinDate">가입일별 정렬 {{ sortType }}</button>
-  <button @click="deleteUser">삭제</button>
+  <div class="grid">
+    <button class="outline secondary" @click="sortJoinDate">
+      가입일별 정렬 {{ sortType }}
+    </button>
+    <button @click="deleteUser">삭제</button>
+    <div></div>
+    <div></div>
+  </div>
   <table>
     <tr>
       <th>
