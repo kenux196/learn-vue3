@@ -66,7 +66,7 @@ function deleteUser() {
         <input
           type="checkbox"
           v-model="allSelected"
-          :disabled="sortedUserList.length === 0"
+          :disabled="!sortedUserList.length"
         />
       </th>
       <th>ID</th>
