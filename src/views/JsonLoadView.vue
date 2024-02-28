@@ -36,6 +36,7 @@ function sortJoinDate() {
 const selectedList = ref([]);
 const allSelected = computed({
   get() {
+    if (sortedUserList.value.length === 0) return false;
     return sortedUserList.value.length === selectedList.value.length;
   },
   set(value) {
@@ -61,7 +62,13 @@ function deleteUser() {
   <button @click="deleteUser">삭제</button>
   <table>
     <tr>
-      <th><input type="checkbox" v-model="allSelected" /></th>
+      <th>
+        <input
+          type="checkbox"
+          v-model="allSelected"
+          :disabled="sortedUserList.length === 0"
+        />
+      </th>
       <th>ID</th>
       <th>NAME</th>
       <th>JOIN DATE</th>
