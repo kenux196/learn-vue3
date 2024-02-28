@@ -33,21 +33,45 @@ function sortJoinDate() {
     sortType.value = 'asc';
   }
 }
+const selectedList = ref([]);
+const allSelected = computed({
+  get() {
+    return sortedUserList.value.length === selectedList.value.length;
+  },
+  set(value) {
+    selectedList.value = value ? sortedUserList.value : [];
+  },
+});
+
+function deleteUser() {
+  if (selectedList.value.length === 0) {
+    alert('삭제할 항목을 선택하세요.');
+    return;
+  }
+  userList.value = userList.value.filter(
+    (user) => !selectedList.value.includes(user)
+  );
+  selectedList.value = [];
+}
 </script>
 <template>
   <h1>Json file load test</h1>
   <p>전체 리스트 길이: {{ userList.length }}</p>
   <button @click="sortJoinDate">가입일별 정렬 {{ sortType }}</button>
+  <button @click="deleteUser">삭제</button>
   <table>
     <tr>
+      <th><input type="checkbox" v-model="allSelected" /></th>
       <th>ID</th>
       <th>NAME</th>
       <th>JOIN DATE</th>
     </tr>
     <tr v-for="user in sortedUserList" :key="user.id">
+      <td><input type="checkbox" :value="user" v-model="selectedList" /></td>
       <td>{{ user.id }}</td>
       <td>{{ user.name }}</td>
       <td>{{ user.joinDate }}</td>
     </tr>
   </table>
+  <p>선택한 아이템 : {{ selectedList }}</p>
 </template>
