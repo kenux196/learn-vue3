@@ -19,7 +19,9 @@ body {
     'a a a'
     'b c c'
     'b d g'
-    'e f g';
+    'e f g'
+    'h h i'
+    'h h j';
 }
 
 .image {
@@ -54,4 +56,8 @@ body {
 
 .image7 {
   grid-area: g;
+}
+
+.video {
+  grid-area: h;
 }
