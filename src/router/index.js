@@ -17,6 +17,10 @@ const router = createRouter({
       component: () => import('../views/TodoListView.vue'),
     },
     {
+      path: '/new-todo-list', // todo: add ...
+      component: () => import('../views/NewTodoListView.vue'),
+    },
+    {
       path: '/posts',
       component: () => import('../views/PostsView.vue'),
     },
