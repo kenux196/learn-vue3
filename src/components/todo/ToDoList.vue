@@ -1,4 +1,44 @@
+<script setup>
+import { computed, onMounted, ref } from 'vue';
+import ToDoDetailModal from './ToDoDetailModal.vue';
+
+const baseUrl = 'https://jsonplaceholder.typicode.com/todos';
+
+const todoList = ref(null);
+const todoData = ref(null);
+const userFilter = ref(1);
+
+const filteredTodoList = computed(() => {
+  return todoList.value.filter((temp) => temp.userId === userFilter.value);
+});
+console.log(filteredTodoList);
+
+async function fetchData(url) {
+  return await fetch(url).then((response) => response.json());
+}
+
+async function getTodoList() {
+  todoList.value = await fetchData(baseUrl);
+}
+async function getDetail(id) {
+  todoData.value = await fetchData(baseUrl + '/' + id);
+}
+
+onMounted(() => {
+  getTodoList();
+});
+
+const todoDetailModal = ref('');
+
+async function openDetail(id) {
+  console.log('open detail : ' + id);
+  await getDetail(id);
+  todoDetailModal.value.open(todoData.value);
+}
+</script>
+
 <template>
+  <input type="text" v-model="userFilter" />
   <div>
     <table>
       <thead>
@@ -27,43 +67,3 @@
     <ToDoDetailModal ref="todoDetailModal" />
   </div>
 </template>
-
-<script setup>
-import { onMounted, ref } from 'vue';
-import ToDoDetailModal from './ToDoDetailModal.vue';
-
-const todoList = ref(null);
-const todoData = ref(null);
-
-async function fetchData() {
-  todoList.value = null;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/todos`);
-  todoList.value = await res.json();
-  for (const key in todoList.value) {
-    if (Object.hasOwnProperty.call(todoList.value, key)) {
-      const element = todoList.value[key];
-      console.log(element);
-    }
-  }
-}
-
-async function getDetail(id) {
-  console.log(`getDetail(${id})`);
-  todoData.value = null;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
-  todoData.value = await res.json();
-  console.log(todoData.value);
-}
-
-onMounted(() => {
-  fetchData();
-});
-
-const todoDetailModal = ref('');
-
-async function openDetail(id) {
-  console.log('open detail : ' + id);
-  await getDetail(id);
-  todoDetailModal.value.open(todoData.value);
-}
-</script>
