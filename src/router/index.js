@@ -32,6 +32,10 @@ const router = createRouter({
       path: '/utils',
       component: () => import('../views/UtilsView.vue'),
     },
+    {
+      path: '/json-test',
+      component: () => import('../views/JsonLoadView.vue'),
+    },
   ],
 });
 

@@ -13,8 +13,3 @@ export class User {
     console.log(this);
   }
 }
-
-const user1 = new User('kenux', 10);
-console.log(user1);
-user1.changeName('kenux196');
-user1.toDisplaay();

@@ -1,31 +1,17 @@
-<script>
+<script setup>
+import { ref } from 'vue';
 import BlogPost from './BlogPost.vue';
 import ButtonCounter from './ButtonCounter.vue';
 import AlertBox from './AlertBox.vue';
 import Greeting from './Greeting.vue';
 
-export default {
-  components: { ButtonCounter, BlogPost, AlertBox, Greeting },
-  data() {
-    return {
-      posts: [
-        { id: 1, title: 'I may be wrong' },
-        { id: 2, title: 'Spring Boot 3.0' },
-        { id: 3, title: 'Vue 3.0 + Vite' },
-      ],
-      postFontSize: 1,
-    };
-  },
-  // props: ['foo'],
-  created() {
-    // console.log(this.foo);
-    console.log(typeof this.title);
-  },
-  props: {
-    title: String,
-    likes: Number,
-  },
-};
+const posts = ref([
+  { id: 1, title: 'I may be wrong' },
+  { id: 2, title: 'Spring Boot 3.0' },
+  { id: 3, title: 'Vue 3.0 + Vite' },
+]);
+
+const postFontSize = ref(1);
 </script>
 
 <template>
@@ -53,7 +39,7 @@ export default {
         :key="post.id"
         :title="post.title"
         @enlarge-text="postFontSize += 0.1"
-      />
+      ></BlogPost>
     </div>
     <AlertBox> 나쁜 일이 일어났습니다. </AlertBox>
   </div>
