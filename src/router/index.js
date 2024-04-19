@@ -33,6 +33,10 @@ const router = createRouter({
       component: () => import('../views/ColorView.vue'),
     },
     {
+      path: '/emit-test',
+      component: () => import('../views/EmitTestView.vue'),
+    },
+    {
       path: '/utils',
       component: () => import('../views/UtilsView.vue'),
     },
