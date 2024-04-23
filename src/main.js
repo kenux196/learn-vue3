@@ -1,7 +1,8 @@
 import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 import piniaPersist from 'pinia-plugin-persist';
-import './assets/pico.min.css';
+// import './assets/pico.min.css';
+import './assets/css/style.css';
 
 import App from './App.vue';
 // import App from './test/SampleSlotParent.vue';
