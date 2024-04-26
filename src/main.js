@@ -1,7 +1,14 @@
-import { createPinia } from 'pinia';
 import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 import piniaPersist from 'pinia-plugin-persist';
-import './assets/pico.min.css';
+import { Quasar, SessionStorage, Notify } from 'quasar';
+
+// import icon libs
+import '@quasar/extras/material-icons/material-icons.css';
+// import quasar css
+import 'quasar/dist/quasar.css';
+
+// import './assets/pico.min.css';
 
 import App from './App.vue';
 // import App from './test/SampleSlotParent.vue';
@@ -16,8 +23,9 @@ app.config.errorHandler = (err) => {
   // console.log(err);
 };
 
-app.use(pinia);
-app.use(router);
+app.use(pinia).use(router).use(Quasar, {
+  plugins: { SessionStorage, Notify },
+});
 
 // 컴포넌트 전역 등록 예시
 // app.component('TodoDeleteButton', TodoDeleteButton);
