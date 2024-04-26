@@ -10,9 +10,13 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@quasar/extras": "^1.16.11",
+    "@quasar/vite-plugin": "^1.6.0",
     "axios": "^1.6.7",
     "pinia": "^2.1.7",
     "pinia-plugin-persist": "^1.0.0",
+    "quasar": "^2.15.4",
+    "sass": "^1.75.0",
     "vue": "^3.4.20",
     "vue-router": "^4.3.0"
   },
