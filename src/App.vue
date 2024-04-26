@@ -1,10 +1,10 @@
 <template>
   <header class="container mx-auto">
-    <div class="bg-red-300">
+    <div class="bg-slate-200">
       <h1 class="text-3xl font-bold underline text-center">Learn Vue3</h1>
     </div>
     <nav>
-      <div class="grid grid-flow-col auto-cols-max gap-3 bg-slate-200">
+      <div class="flex justify-around bg-slate-200">
         <div class="text-sl font-bold underline">
           <router-link to="/">Home</router-link>
         </div>
