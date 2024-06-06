@@ -16,7 +16,7 @@
           <q-btn flat round dense icon="whatshot"></q-btn>
         </q-toolbar>
         <q-tabs v-model="tab">
-          <q-tab name="home" label="Home" router-link to="/book">
+          <q-tab name="home" label="Home" router-link to >
             <router-link to="/book" />
           </q-tab>
           <q-tab name="book" label="Books"></q-tab>

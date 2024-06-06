@@ -6,7 +6,8 @@ import { Quasar, SessionStorage, Notify } from 'quasar';
 // import icon libs
 import '@quasar/extras/material-icons/material-icons.css';
 // import quasar css
-import 'quasar/dist/quasar.css';
+// import 'quasar/dist/quasar.css';
+import 'quasar/src/css/index.sass'
 
 // import './assets/pico.min.css';
 

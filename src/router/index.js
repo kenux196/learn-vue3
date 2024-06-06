@@ -1,50 +1,15 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import { createRouter, createMemoryHistory, createWebHistory, createWebHashHistory } from 'vue-router';
+import routes from './routes'
+
+const createHistory = process.env.SERVER
+? createMemoryHistory
+: process.env.VUE_ROUTER_MODE === 'history'
+? createWebHistory
+: createWebHashHistory;
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      component: HomeView,
-    },
-    {
-      path: '/book',
-      component: () => import('../views/BookView.vue'),
-    },
-    {
-      path: '/todo-list',
-      component: () => import('../views/TodoListView.vue'),
-    },
-    {
-      path: '/new-todo-list', // todo: add ...
-      component: () => import('../views/NewTodoListView.vue'),
-    },
-    {
-      path: '/posts',
-      component: () => import('../views/PostsView.vue'),
-    },
-    {
-      path: '/store-sample',
-      component: () => import('../views/StoreSampleView.vue'),
-    },
-    {
-      path: '/color',
-      component: () => import('../views/ColorView.vue'),
-    },
-    {
-      path: '/emit-test',
-      component: () => import('../views/EmitTestView.vue'),
-    },
-    {
-      path: '/utils',
-      component: () => import('../views/UtilsView.vue'),
-    },
-    {
-      path: '/json-test',
-      component: () => import('../views/JsonLoadView.vue'),
-    },
-  ],
+  history: createHistory(process.env.VUE_ROUTER_BASE),
+  routes,
 });
 
 export default router;
