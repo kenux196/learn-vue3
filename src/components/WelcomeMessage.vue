@@ -1,6 +1,6 @@
 <script setup>
 import { User } from '../js/user';
-import { store } from '../store/store.js';
+import { store } from '../stores/store.js';
 // const user = inject('user');
 function createUser() {
   const name = 'player ' + Math.floor(Math.random() * 100);

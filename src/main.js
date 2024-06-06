@@ -14,9 +14,12 @@ import 'quasar/src/css/index.sass'
 import App from './App.vue';
 // import App from './test/SampleSlotParent.vue';
 import router from './router';
+import { createI18n } from 'vue-i18n';
 
 const pinia = createPinia();
 pinia.use(piniaPersist);
+const i18n = createI18n({});
+
 const app = createApp(App);
 
 // app 레벨의 에러 핸들링 정의 예시
@@ -24,7 +27,7 @@ app.config.errorHandler = (err) => {
   // console.log(err);
 };
 
-app.use(pinia).use(router).use(Quasar, {
+app.use(pinia).use(router).use(i18n).use(Quasar, {
   plugins: { SessionStorage, Notify },
 });
 

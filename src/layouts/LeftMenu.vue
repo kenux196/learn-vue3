@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import MenuItem from 'src/components/MenuItem.vue';
+import MenuItem from '@/components/MenuItem.vue';
 
 const linksList = [
   {

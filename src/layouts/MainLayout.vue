@@ -11,9 +11,9 @@
 
 <script setup>
 import { ref } from 'vue';
-import Header from 'src/layouts/HeaderLayout.vue';
-import Footer from 'layouts/FooterLayout.vue';
-import Menu from 'layouts/LeftMenu.vue';
+import Header from '@/layouts/HeaderLayout.vue';
+import Footer from '@/layouts/FooterLayout.vue';
+import Menu from '@/layouts/LeftMenu.vue';
 
 const menuOpen = ref(true);
 

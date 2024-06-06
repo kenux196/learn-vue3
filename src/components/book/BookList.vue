@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref, reactive } from 'vue';
-import { store } from '../../store/store';
+import { store } from '../../stores/store';
 import BookAddForm from './BookAddForm.vue';
 import Progress from '../common/Progress.vue';
 

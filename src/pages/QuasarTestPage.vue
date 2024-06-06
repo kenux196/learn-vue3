@@ -62,7 +62,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import useCounterStore from 'stores/example-store';
+import useCounterStore from '@/stores/example-store';
 import { useQuasar } from 'quasar';
 
 const $q = useQuasar();

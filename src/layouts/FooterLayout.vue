@@ -13,7 +13,7 @@
 </template>
 <script setup>
 import { ref } from 'vue';
-import LanguageSwitcher from 'components/LanguageSwitcher.vue';
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
 
 const now = ref(new Date().toLocaleString());
 </script>
