@@ -6,7 +6,7 @@
       <div>Copyright @ 2024 kenux.yun</div>
     </div>
     <div class="col">
-      <language-switcher></language-switcher>
+      <LanguageSwitcher />
     </div>
     <div class="col-1 q-mr-sm">Quasar v{{ $q.version }}</div>
   </q-footer>

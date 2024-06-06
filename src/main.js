@@ -7,7 +7,7 @@ import { Quasar, SessionStorage, Notify } from 'quasar';
 import '@quasar/extras/material-icons/material-icons.css';
 // import quasar css
 // import 'quasar/dist/quasar.css';
-import 'quasar/src/css/index.sass'
+import 'quasar/src/css/index.sass';
 
 // import './assets/pico.min.css';
 
@@ -15,10 +15,17 @@ import App from './App.vue';
 // import App from './test/SampleSlotParent.vue';
 import router from './router';
 import { createI18n } from 'vue-i18n';
+import messages from '@/i18n';
 
 const pinia = createPinia();
 pinia.use(piniaPersist);
-const i18n = createI18n({});
+const i18n = createI18n({
+  legacy: false,
+  locale: 'ko-KR',
+  // globalInjection: true,
+  fallbackLocale: 'en-US',
+  messages: messages,
+});
 
 const app = createApp(App);
 
