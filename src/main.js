@@ -20,10 +20,10 @@ import messages from '@/i18n';
 const pinia = createPinia();
 pinia.use(piniaPersist);
 const i18n = createI18n({
-  legacy: false,
+  legacy: false, // composition api이면 legacy는 false
   locale: 'ko-KR',
-  // globalInjection: true,
-  fallbackLocale: 'en-US',
+  globalInjection: true,
+  fallbackLocale: 'ko-KR',
   messages: messages,
 });
 
