@@ -20,6 +20,11 @@ const linksList = [
     link: '/',
   },
   {
+    title: '중첩된 라우팅 연습',
+    icon: '',
+    link: '/nested-route',
+  },
+  {
     title: 'Dashboard',
     icon: 'dashboard',
     link: '/dashboard',

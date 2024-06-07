@@ -1,12 +1,34 @@
 const routes = [
-  // {
-  //   path: '/',
-  //   component: HomeView,
-  // },
   { path: '/', component: () => import('@/pages/LandingPage.vue') },
   {
+    path: '/nested-route',
+    component: () => import('@/pages/NestedRoutePage.vue'),
+    children: [
+      {
+        path: 'sub-page1',
+        component: () => import('@/pages/nested-route-page/SubPage1.vue'),
+      },
+      {
+        path: 'sub-page2',
+        component: () => import('@/pages/nested-route-page/SubPage2.vue'),
+      },
+      {
+        path: 'sub-page3',
+        component: () => import('@/pages/nested-route-page/SubPage3.vue'),
+      },
+      {
+        path: 'sub-page4',
+        component: () => import('@/pages/nested-route-page/SubPage4.vue'),
+      },
+      {
+        path: 'books',
+        component: () => import('@/pages/nested-route-page/BooksPage.vue'),
+      },
+    ],
+  },
+  {
     path: '/book',
-    component: () => import('@/pages/BookView.vue'),
+    component: () => import('@/pages/nested-route-page/BooksPage.vue'),
   },
   {
     path: '/todo-list',
@@ -18,7 +40,8 @@ const routes = [
   },
   {
     path: '/posts',
-    component: () => import('@/pages/PostsView.vue'),
+    // component: () => import('@/pages/PostsView.vue'),
+    component: () => import('@/pages/PostsPage.vue'),
   },
   {
     path: '/store-sample',
@@ -41,7 +64,6 @@ const routes = [
     component: () => import('@/pages/JsonLoadView.vue'),
   },
   { path: '/dashboard', component: () => import('@/pages/DashboardPage.vue') },
-  { path: '/posts', component: () => import('@/pages/PostsPage.vue') },
   {
     path: '/settings',
     component: () => import('@/pages/SettingsPage.vue'),
@@ -72,6 +94,6 @@ const routes = [
     path: '/:catchAll(.*)*',
     component: () => import('@/pages/ErrorNotFound.vue'),
   },
-]
+];
 
 export default routes;
