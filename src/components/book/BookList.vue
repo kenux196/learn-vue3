@@ -1,6 +1,49 @@
+<template>
+  <div class="grid">
+    <p style="font-size: xx-large">보유 도서 목록</p>
+    <p role="button" @click="openBookForm()">add</p>
+    <p role="button" @click="removeBooks()">remove</p>
+    <p role="button" @click="modifyBook()">modify</p>
+  </div>
+  <table role="grid">
+    <thead>
+      <th>
+        <input type="checkbox" :checked="state.selectedAll" @change="selectAll()" />
+      </th>
+      <th>#</th>
+      <th>제목</th>
+      <th>작가</th>
+      <th>가격</th>
+      <th>발행일</th>
+    </thead>
+    <tbody>
+      <tr v-for="book in state.books" :key="book.id">
+        <td>
+          <input type="checkbox" v-model="state.selectedBook" :value="book.id" @change="selectedBookList()" />
+        </td>
+        <td>
+          <a href="#">{{ book.id }}</a>
+        </td>
+        <td>
+          <a href="#">{{ book.title }}</a>
+        </td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.price }}</td>
+        <td>{{ book.publishDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="grid page-num">
+    <a>prev</a>
+    <a v-for="i in 10" :key="i">{{ i }}</a>
+    <a>next</a>
+  </div>
+  <BookAddForm ref="bookAddForm" @added-book="updateBooks" />
+  <Progress ref="progress" />
+</template>
 <script setup>
-import { computed, ref, reactive } from 'vue';
-import { store } from '../../stores/store';
+import { ref, reactive } from 'vue';
+import { store } from '@/stores/store';
 import BookAddForm from './BookAddForm.vue';
 import Progress from '../common/Progress.vue';
 
@@ -69,57 +112,4 @@ function selectedBookList() {
   console.log('[debug] selected book :' + state.selectedBook);
 }
 </script>
-
-<template>
-  <div class="grid">
-    <p style="font-size: xx-large">보유 도서 목록</p>
-    <p role="button" @click="openBookForm()">add</p>
-    <p role="button" @click="removeBooks()">remove</p>
-    <p role="button" @click="modifyBook()">modify</p>
-  </div>
-  <table role="grid">
-    <thead>
-      <th>
-        <input
-          type="checkbox"
-          :checked="state.selectedAll"
-          @change="selectAll()"
-        />
-      </th>
-      <th>#</th>
-      <th>제목</th>
-      <th>작가</th>
-      <th>가격</th>
-      <th>발행일</th>
-    </thead>
-    <tbody>
-      <tr v-for="book in state.books" :key="book.id">
-        <td>
-          <input
-            type="checkbox"
-            v-model="state.selectedBook"
-            :value="book.id"
-            @change="selectedBookList()"
-          />
-        </td>
-        <td>
-          <a href="#">{{ book.id }}</a>
-        </td>
-        <td>
-          <a href="#">{{ book.title }}</a>
-        </td>
-        <td>{{ book.author }}</td>
-        <td>{{ book.price }}</td>
-        <td>{{ book.publishDate }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="grid page-num">
-    <a>prev</a>
-    <a v-for="i in 10" :key="i">{{ i }}</a>
-    <a>next</a>
-  </div>
-  <BookAddForm ref="bookAddForm" @added-book="updateBooks" />
-  <Progress ref="progress" />
-</template>
 <style scoped></style>

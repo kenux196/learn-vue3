@@ -2,7 +2,7 @@ const routes = [
   { path: '/', component: () => import('@/pages/LandingPage.vue') },
   {
     path: '/nested-route',
-    component: () => import('@/pages/NestedRoutePage.vue'),
+    component: () => import('@/pages/nested-route-page/NestedRoutePage.vue'),
     children: [
       {
         path: 'sub-page1',
