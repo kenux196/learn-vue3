@@ -4,7 +4,7 @@ import {
   useCounter2Store,
   useCounterStore,
   useUserStore,
-} from '../store/store';
+} from '../stores/store';
 
 const counterStore = useCounterStore();
 const counterStore2 = useCounter2Store();
