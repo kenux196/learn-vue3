@@ -20,11 +20,6 @@ const linksList = [
     link: '/',
   },
   {
-    title: '중첩된 라우팅 연습',
-    icon: '',
-    link: '/nested-route',
-  },
-  {
     title: 'Dashboard',
     icon: 'dashboard',
     link: '/dashboard',
@@ -40,24 +35,24 @@ const linksList = [
     link: '/settings',
   },
   {
-    title: 'Card Sample',
-    icon: 'dashboard',
-    link: '/Card-sample',
+    title: '중첩된 라우팅 연습',
+    icon: 'credit_card',
+    link: '/nested-route',
   },
   {
-    title: 'Quasar Test',
-    icon: 'logo_dev',
-    link: '/quasar-test',
+    title: 'Quasar Samples',
+    icon: 'lightbulb',
+    link: '/quasar',
   },
   {
-    title: 'Chart.js test',
+    title: 'Chart.js Test',
     icon: 'bar_chart',
-    link: '/chart-test',
+    link: '/chart-js',
   },
   {
-    title: 'Chart.js test 2',
-    icon: 'bar_chart',
-    link: '/chart-test2',
+    title: 'Vue3 Test',
+    icon: '',
+    link: '/vue',
   },
   {
     title: '구구단 테스트',

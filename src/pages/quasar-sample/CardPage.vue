@@ -20,7 +20,7 @@
 import { uid, useQuasar } from 'quasar';
 import { reactive, defineAsyncComponent } from 'vue';
 
-const MemberCard = defineAsyncComponent(() => import('../components/MemberCard.vue'));
+const MemberCard = defineAsyncComponent(() => import('@/components/MemberCard.vue'));
 
 const $q = useQuasar();
 const members = reactive($q.sessionStorage.getItem('members') || []);
