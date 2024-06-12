@@ -5,13 +5,13 @@
         <q-icon name="menu"></q-icon>
         Menu
       </q-item-label>
-      <menu-item v-for="link in linksList" :key="link.title" v-bind="link"></menu-item>
+      <MainMenuItem v-for="link in linksList" :key="link.title" v-bind="link" />
     </q-list>
   </q-drawer>
 </template>
 
 <script setup>
-import MenuItem from '@/components/MenuItem.vue';
+import MainMenuItem from './components/MainMenuItem.vue';
 
 const linksList = [
   {
@@ -36,12 +36,12 @@ const linksList = [
   },
   {
     title: '중첩된 라우팅 연습',
-    icon: 'credit_card',
+    icon: 'auto_awesome_mosaic',
     link: '/nested-route',
   },
   {
     title: 'Quasar Samples',
-    icon: 'lightbulb',
+    icon: 'memory',
     link: '/quasar',
   },
   {
@@ -51,12 +51,12 @@ const linksList = [
   },
   {
     title: 'Vue3 Test',
-    icon: '',
+    icon: 'laptop',
     link: '/vue',
   },
   {
     title: '구구단 테스트',
-    icon: 'bar_chart',
+    icon: 'toys',
     link: '/gugudan',
   },
 ];

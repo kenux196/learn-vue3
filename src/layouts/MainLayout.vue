@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh Lpr fFf">
-    <Header @toggle-menu="toggleLeftDrawer" />
-    <Menu v-model="menuOpen" show-if-above bordered />
+    <Header @toggle-menu="toggleMainMenuDrawer" />
+    <MainMenu v-model="menuOpen" show-if-above bordered />
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -13,11 +13,11 @@
 import { ref } from 'vue';
 import Header from '@/layouts/HeaderLayout.vue';
 import Footer from '@/layouts/FooterLayout.vue';
-import Menu from '@/layouts/LeftMenu.vue';
+import MainMenu from '@/layouts/MainMenuLayout.vue';
 
 const menuOpen = ref(true);
 
-function toggleLeftDrawer() {
+function toggleMainMenuDrawer() {
   menuOpen.value = !menuOpen.value;
   console.log(menuOpen.value);
 }
