@@ -3,32 +3,15 @@
     <article class="dialog-b">
       <h3>책 등록!</h3>
       <label for="title">제목</label>
-      <input
-        id="title"
-        type="text"
-        placeholder="제목을 입력하세요"
-        v-model="state.title"
-      />
+      <input id="title" type="text" placeholder="제목을 입력하세요" v-model="state.title" />
       <label for="author">작가</label>
-      <input
-        id="author"
-        type="text"
-        placeholder="작가명 입력"
-        v-model="state.author"
-      />
+      <input id="author" type="text" placeholder="작가명 입력" v-model="state.author" />
       <label for="price">가격</label>
-      <input
-        id="price"
-        type="number"
-        placeholder="제목을 입력하세요"
-        v-model="state.price"
-      />
+      <input id="price" type="number" placeholder="제목을 입력하세요" v-model="state.price" />
       <label for="published-date">발행일</label>
       <input id="published-date" type="date" v-model="state.date" />
       <div class="grid">
-        <a href="#cancel" role="button" class="secondary" @click="close()"
-          >취소</a
-        >
+        <a href="#cancel" role="button" class="secondary" @click="close()">취소</a>
         <a href="#confirm" role="button" @click="addBook()">등록</a>
       </div>
     </article>
@@ -63,12 +46,7 @@ function close() {
 }
 
 function validateInputValue() {
-  if (
-    state.title == '' ||
-    state.author == '' ||
-    state.price == 0 ||
-    state.date == ''
-  ) {
+  if (state.title == '' || state.author == '' || state.price == 0 || state.date == '') {
     state;
     return false;
   }
@@ -77,12 +55,7 @@ function validateInputValue() {
 
 function addBook() {
   if (validateInputValue()) {
-    const book = Book.createBook(
-      state.title,
-      state.author,
-      state.price,
-      state.date
-    );
+    const book = Book.createBook(state.title, state.author, state.price, state.date);
     bookMemoryRepository.save(book);
     console.log('book 추가하기 성공');
     emit('addedBook');
