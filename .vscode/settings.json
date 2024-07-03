@@ -19,7 +19,7 @@
       "mode": "auto"
     }
   ],
-  "files.autoSave": "afterDelay",
+  "files.autoSave": "off",
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
