@@ -1,4 +1,5 @@
-@base-url = http://localhost:3000
+#
+@base-url=http://localhost:3000
 
 ###
 GET {{base-url}}
@@ -11,3 +12,12 @@ PUT {{base-url}}
 
 ###
 DELETE {{base-url}}
+
+###
+GET {{base-url}}/static/favicon.ico HTTP/1.1
+
+###
+GET {{base-url}}/birds HTTP/1.1
+
+###
+GET {{base-url}}/birds/about HTTP/1.1
