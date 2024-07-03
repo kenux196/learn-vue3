@@ -14,12 +14,15 @@ export default defineConfig({
     // @quasar/plugin-vite options list:
     // https://github.com/quasarframework/quasar/blob/dev/vite-plugin/index.d.ts
     quasar({
-      sassVariables: 'src/css/quasar.variables.scss'
+      sassVariables: 'src/css/quasar.variables.scss',
     }),
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
+  },
+  build: {
+    outDir: './backend/public',
   },
 });

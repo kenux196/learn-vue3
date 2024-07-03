@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "node.js backend",
+  "main": "index.js",
+  "author": "kenux",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
