@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start:dev": "nodemon --exec babel-node server.js",
-    "start": "babel-node server.js",
+    "start:dev": "nodemon --exec babel-node backend/server.js",
+    "start": "babel-node backend/server.js",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
