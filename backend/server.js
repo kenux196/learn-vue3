@@ -1,12 +1,11 @@
+import './env.js';
 import express from 'express';
 import path from 'node:path';
 import history from 'connect-history-api-fallback';
 import birdsRouter from './birds.js';
 
-console.log(process.env.NODE_ENV);
-
 const app = express();
-const port = 3000;
+const port = process.env.SERVER_PORT || 3000;
 
 app.use(history()).use(express.static(path.resolve() + '/public'));
 

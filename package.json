@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start:dev": "nodemon --exec babel-node backend/server.js",
-    "start": "babel-node backend/server.js",
+    "start:dev": "cross-env NODE_ENV=dev nodemon --exec babel-node backend/server.js",
+    "start": "cross-env NODE_ENV=prod babel-node backend/server.js",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
@@ -44,6 +44,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-prettier": "^7.1.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.22.0",
     "nodemon": "^3.1.4",
