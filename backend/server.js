@@ -3,6 +3,8 @@ import path from 'node:path';
 import history from 'connect-history-api-fallback';
 import birdsRouter from './birds.js';
 
+console.log(process.env.NODE_ENV);
+
 const app = express();
 const port = 3000;
 
