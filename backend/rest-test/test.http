@@ -21,3 +21,9 @@ GET {{base-url}}/birds HTTP/1.1
 
 ###
 GET {{base-url}}/birds/about HTTP/1.1
+
+###
+GET {{base-url}}/example/b
+
+###
+GET {{base-url}}/middleware
