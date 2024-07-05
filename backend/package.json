@@ -1,0 +1,29 @@
+{
+  "name": "learn-vue3-backend",
+  "version": "0.0.1",
+  "description": "Learn vue3 & express",
+  "private": true,
+  "author": "kenux",
+  "type": "module",
+  "scripts": {
+    "start:dev": "cross-env NODE_ENV=dev nodemon --exec babel-node server.js",
+    "start": "cross-env NODE_ENV=prod babel-node server.js"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.24.7",
+    "connect-history-api-fallback": "^2.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/node": "^7.24.7",
+    "@babel/plugin-transform-runtime": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.4"
+  }
+}
