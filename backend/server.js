@@ -24,7 +24,7 @@ app.use('/birds', birdsRouter);
 
 app.listen(port, () => {
   logger.info('info log');
-  logger.warn('warn log');
+  logger.warn('warn log info log');
   logger.error('error log');
   console.log(`Server is running on port: ${port}`);
 });

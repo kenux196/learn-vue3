@@ -1,9 +1,10 @@
 import winston from 'winston';
+import winstonDaily from 'winston-daily-rotate-file';
 
 const { combine, timestamp, printf, colorize } = winston.format;
 
-const logFormat = printf((info) => {
-  return `${info.timestamp} ${info.level}: ${info.message}`;
+const logFormat = printf((log) => {
+  return `${log.timestamp} [${log.level}]: ${log.message}`;
 });
 
 const logger = winston.createLogger({
@@ -13,6 +14,16 @@ const logger = winston.createLogger({
     }),
     logFormat
   ),
+  transports: [
+    new winstonDaily({
+      level: 'info',
+      datePattern: 'YYYY-MM-DD',
+      dirname: 'logs',
+      filename: 'app.log',
+      maxFiles: 30,
+      zippedArchive: true,
+    }),
+  ],
 });
 
 logger.stream = {
