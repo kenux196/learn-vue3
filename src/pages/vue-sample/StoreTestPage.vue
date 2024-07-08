@@ -16,6 +16,8 @@ const { accessToken, firstName, lastName } = storeToRefs(userStore);
     <input type="text" v-model="name" />
     <p>{{ count }} * 2 = {{ doubleCount }}</p>
     <button @click="counterStore.increment">count 증가</button>
+    <button @click="counterStore.decrement">count 감소</button>
+    <button @click="counterStore.$reset">초기화</button>
   </div>
   <div>
     <p>
@@ -27,5 +29,6 @@ const { accessToken, firstName, lastName } = storeToRefs(userStore);
       <input type="text" v-model="firstName" />
       <input type="text" v-model="accessToken" />
     </div>
+    <button @click="userStore.$reset">reset user data</button>
   </div>
 </template>

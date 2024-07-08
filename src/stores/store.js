@@ -15,12 +15,17 @@ export const useCounterStore = defineStore('counter2', () => {
   const count = ref(0);
   const name = ref('Eduardo');
   const doubleCount = computed(() => count.value * 2);
+
   function increment() {
     count.value++;
   }
 
   function decrement() {
     count.value--;
+  }
+
+  function $reset() {
+    count.value = 0;
   }
 
   const persist = () => {
@@ -30,7 +35,7 @@ export const useCounterStore = defineStore('counter2', () => {
     };
   };
 
-  return { count, name, doubleCount, increment, decrement, persist };
+  return { count, name, doubleCount, increment, decrement, $reset, persist };
 });
 
 export const useUserStore = defineStore('storeUser', {
