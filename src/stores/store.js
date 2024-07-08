@@ -11,7 +11,7 @@ export const store = reactive({
 });
 
 // setup store 방식
-export const useCounterStore = defineStore('counter2', () => {
+export const useCounterStore = defineStore('counter', () => {
   const count = ref(0);
   const name = ref('Eduardo');
   const doubleCount = computed(() => count.value * 2);
@@ -36,6 +36,28 @@ export const useCounterStore = defineStore('counter2', () => {
   };
 
   return { count, name, doubleCount, increment, decrement, $reset, persist };
+});
+
+export const useCounterOptionApiStore = defineStore('counter2', {
+  state: () => {
+    return {
+      count: 0,
+      name: 'kenux',
+    };
+  },
+  getters: {
+    doubleCount() {
+      return this.count * 2;
+    },
+  },
+  actions: {
+    increment() {
+      this.count++;
+    },
+    decrement() {
+      this.count--;
+    },
+  },
 });
 
 export const useUserStore = defineStore('storeUser', {
