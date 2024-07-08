@@ -1,9 +1,8 @@
 <script setup>
 import { storeToRefs } from 'pinia';
-import { useCounter2Store, useCounterStore, useUserStore } from '../../stores/store';
+import { useCounterStore, useUserStore } from '../../stores/store';
 
 const counterStore = useCounterStore();
-const counterStore2 = useCounter2Store();
 const userStore = useUserStore();
 
 // 반응형을 유지하면서 스토어에서 속성 추출하기: storeToRefs() 사용
