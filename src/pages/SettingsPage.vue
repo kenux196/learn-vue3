@@ -13,8 +13,13 @@
     </q-select>
   </div> -->
   <div>
-    <li v-for="item in posts" :key="item.id">
-      <span>{{ item.id }} {{ item.title }}</span>
+    <li v-for="post in posts" :key="post.id">
+      <span>{{ post.id }} {{ post.title }}</span>
+    </li>
+  </div>
+  <div>
+    <li v-for="comment in comments" :key="comment.id">
+      <span>{{ comment.id }} {{ comment.postId }} {{ comment.email }}</span>
     </li>
   </div>
 </template>
@@ -31,13 +36,26 @@ const country = ref('한국');
 const countryOptions = ['한국', '베트남', '태국', '필리핀', '인도네시아', '독일', '프랑스'];
 
 const posts = ref([]);
+const comments = ref([]);
 
 function getPost() {
   proxy.$api.board
     .getPosts()
     .then((res) => {
-      console.log('success', res.data);
+      console.log('getPosts() success', res.data);
       posts.value = res.data;
+    })
+    .catch((res) => {
+      console.log('failed', res);
+    });
+}
+
+function getComment() {
+  proxy.$api.comment
+    .getComments()
+    .then((res) => {
+      console.log('getComments() success', res.data);
+      comments.value = res.data;
     })
     .catch((res) => {
       console.log('failed', res);
@@ -46,5 +64,6 @@ function getPost() {
 
 onMounted(() => {
   getPost();
+  getComment();
 });
 </script>

@@ -1,7 +1,8 @@
 import axios from 'axios';
 import boardApi from './board-api';
+import commentApi from './comment-api';
 
-const axiosInstance = axios.create({
+const axiosInstanceWithAuth = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com',
   headers: {
     'Content-Type': 'application/json',
@@ -9,7 +10,14 @@ const axiosInstance = axios.create({
   },
 });
 
-axiosInstance.interceptors.request.use(
+const axiosInstance = axios.create({
+  baseURL: 'https://jsonplaceholder.typicode.com',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+axiosInstanceWithAuth.interceptors.request.use(
   (config) => {
     console.log(`[axiosInstance.interceptors.request] (before) config = ${config.headers['user-name']}`);
     config.headers['user-name'] = 'kenux333';
@@ -21,7 +29,7 @@ axiosInstance.interceptors.request.use(
   }
 );
 
-axiosInstance.interceptors.response.use(
+axiosInstanceWithAuth.interceptors.response.use(
   (response) => {
     console.log(`[axios interceptor response] status: ${response.status}`);
     return response;
@@ -33,5 +41,6 @@ axiosInstance.interceptors.response.use(
 );
 
 export const api = {
-  board: boardApi(axiosInstance),
+  board: boardApi(axiosInstanceWithAuth),
+  comment: commentApi(axiosInstance),
 };

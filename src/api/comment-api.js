@@ -5,10 +5,7 @@ function getUrl(path) {
 }
 
 export default (instance) => ({
-  getPosts() {
-    return instance.get(getUrl('/posts'));
-  },
-  getTodos() {
-    return instance.get(getUrl('/todos'));
+  getComments() {
+    return instance.get(getUrl('/comments'));
   },
 });
