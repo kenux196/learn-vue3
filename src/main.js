@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import piniaPersist from 'pinia-plugin-persist';
 import { Quasar, SessionStorage, Notify } from 'quasar';
+import axios from 'axios';
 
 // import icon libs
 import '@quasar/extras/material-icons/material-icons.css';
@@ -9,16 +10,16 @@ import '@quasar/extras/material-icons/material-icons.css';
 // import 'quasar/dist/quasar.css';
 import 'quasar/src/css/index.sass';
 
-// import './assets/pico.min.css';
-
 import App from './App.vue';
 // import App from './test/SampleSlotParent.vue';
 import router from './router';
 import { createI18n } from 'vue-i18n';
 import messages from '@/i18n';
+import { api } from './api/api';
 
 const pinia = createPinia();
 pinia.use(piniaPersist);
+
 const i18n = createI18n({
   legacy: false, // composition api이면 legacy는 false
   locale: 'ko-KR',
@@ -28,6 +29,9 @@ const i18n = createI18n({
 });
 
 const app = createApp(App);
+
+app.config.globalProperties.$axios = axios;
+app.config.globalProperties.$api = api;
 
 // app 레벨의 에러 핸들링 정의 예시
 app.config.errorHandler = (err) => {

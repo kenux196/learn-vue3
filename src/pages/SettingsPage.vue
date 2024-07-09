@@ -15,11 +15,15 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, getCurrentInstance } from 'vue';
 
 const region = ref('Asia/Pacific - KR');
 const regionOptions = ['Asia/Pacific - KR', 'Europe - EU', 'North America/ Latin America - US'];
 
 const country = ref('한국');
 const countryOptions = ['한국', '베트남', '태국', '필리핀', '인도네시아', '독일', '프랑스'];
+
+const { proxy } = getCurrentInstance();
+console.log(proxy);
+console.log(proxy.$api.board.getPosts());
 </script>

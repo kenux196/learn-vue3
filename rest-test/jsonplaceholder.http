@@ -1,0 +1,4 @@
+@url=https://jsonplaceholder.typicode.com
+
+### posts
+GET {{url}}/posts HTTP/1.1
