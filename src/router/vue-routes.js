@@ -22,6 +22,10 @@ const vueRoutes = {
       path: 'utils',
       component: () => import('@/pages/vue-sample/UtilsPage.vue'),
     },
+    {
+      path: 'login',
+      component: () => import('@/pages/vue-sample/LoginPage.vue'),
+    },
   ],
 };
 

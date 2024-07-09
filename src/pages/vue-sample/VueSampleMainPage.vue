@@ -7,6 +7,7 @@
         <q-route-tab name="todo-list2" label="todo-list2" to="/vue/todo-list2" />
         <q-route-tab name="store" label="Store" to="/vue/store" />
         <q-route-tab name="utils" label="utils" to="/vue/utils" />
+        <q-route-tab name="login" label="login" to="/vue/login" />
       </q-tabs>
     </div>
     <RouterView />

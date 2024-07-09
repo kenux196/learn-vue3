@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const axiosCommon = axios.create({
+const withTokenAxios = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
@@ -8,7 +8,7 @@ const axiosCommon = axios.create({
   },
 });
 
-axiosCommon.interceptors.request.use(
+withTokenAxios.interceptors.request.use(
   (config) => {
     return config;
   },
@@ -17,7 +17,7 @@ axiosCommon.interceptors.request.use(
   }
 );
 
-axiosCommon.interceptors.response.use(
+withTokenAxios.interceptors.response.use(
   (response) => {
     return response;
   },
@@ -26,4 +26,4 @@ axiosCommon.interceptors.response.use(
   }
 );
 
-export default axiosCommon;
+export default withTokenAxios;
