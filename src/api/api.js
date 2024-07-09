@@ -19,9 +19,7 @@ const axiosInstance = axios.create({
 
 axiosInstanceWithAuth.interceptors.request.use(
   (config) => {
-    console.log(`[axiosInstance.interceptors.request] (before) config = ${config.headers['user-name']}`);
     config.headers['user-name'] = 'kenux333';
-    console.log(`[axiosInstance.interceptors.request] (after) config = ${config.headers['user-name']}`);
     return config;
   },
   (error) => {
