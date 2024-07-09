@@ -36,8 +36,7 @@ function getPost() {
   proxy.$api.board
     .getPosts()
     .then((res) => {
-      console.log('success', res);
-      console.log(res.data);
+      console.log('success', res.data);
       posts.value = res.data;
     })
     .catch((res) => {
