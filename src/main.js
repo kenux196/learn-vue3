@@ -30,7 +30,6 @@ const i18n = createI18n({
 
 const app = createApp(App);
 
-app.config.globalProperties.$axios = axios;
 app.config.globalProperties.$api = api;
 
 // app 레벨의 에러 핸들링 정의 예시

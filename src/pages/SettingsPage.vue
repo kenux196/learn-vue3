@@ -12,10 +12,17 @@
       </template>
     </q-select>
   </div> -->
+  <div>
+    <li v-for="item in posts" :key="item.id">
+      <span>{{ item.id }} {{ item.title }}</span>
+    </li>
+  </div>
 </template>
 
 <script setup>
-import { ref, getCurrentInstance } from 'vue';
+import { ref, getCurrentInstance, onMounted } from 'vue';
+
+const { proxy } = getCurrentInstance();
 
 const region = ref('Asia/Pacific - KR');
 const regionOptions = ['Asia/Pacific - KR', 'Europe - EU', 'North America/ Latin America - US'];
@@ -23,7 +30,22 @@ const regionOptions = ['Asia/Pacific - KR', 'Europe - EU', 'North America/ Latin
 const country = ref('한국');
 const countryOptions = ['한국', '베트남', '태국', '필리핀', '인도네시아', '독일', '프랑스'];
 
-const { proxy } = getCurrentInstance();
-console.log(proxy);
-console.log(proxy.$api.board.getPosts());
+const posts = ref([]);
+
+function getPost() {
+  proxy.$api.board
+    .getPosts()
+    .then((res) => {
+      console.log('success', res);
+      console.log(res.data);
+      posts.value = res.data;
+    })
+    .catch((res) => {
+      console.log('failed', res);
+    });
+}
+
+onMounted(() => {
+  getPost();
+});
 </script>
