@@ -16,6 +16,7 @@ import router from './router';
 import { createI18n } from 'vue-i18n';
 import messages from '@/i18n';
 import { api } from './api/api';
+import { useAppStore } from './stores/appStore';
 
 const pinia = createPinia();
 pinia.use(piniaPersist);
@@ -30,8 +31,6 @@ const i18n = createI18n({
 
 const app = createApp(App);
 
-app.config.globalProperties.$api = api;
-
 // app 레벨의 에러 핸들링 정의 예시
 app.config.errorHandler = (err) => {
   // console.log(err);
@@ -40,6 +39,9 @@ app.config.errorHandler = (err) => {
 app.use(pinia).use(router).use(i18n).use(Quasar, {
   plugins: { SessionStorage, Notify },
 });
+
+app.config.globalProperties.$api = api;
+app.config.globalProperties.$appStore = useAppStore();
 
 // 컴포넌트 전역 등록 예시
 // app.component('TodoDeleteButton', TodoDeleteButton);
