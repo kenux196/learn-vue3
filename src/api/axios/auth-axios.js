@@ -1,13 +1,7 @@
 import useAppStore from '@/stores/appStore';
 import axios from 'axios';
 
-const authAxios = axios.create({
-  baseURL: 'http://localhost:3000',
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: 'Bearer 123123',
-  },
-});
+const authAxios = axios.create();
 
 authAxios.interceptors.request.use(
   (config) => {

@@ -39,8 +39,8 @@ const posts = ref([]);
 const comments = ref([]);
 
 function getPost() {
-  proxy.$api.board
-    .getPosts()
+  proxy.$api.jsonplaceholder
+    .fetchPosts()
     .then((res) => {
       console.log('getPosts() success', res.data);
       posts.value = res.data;
@@ -51,8 +51,8 @@ function getPost() {
 }
 
 function getComment() {
-  proxy.$api.comment
-    .getComments()
+  proxy.$api.jsonplaceholder
+    .fetchComments()
     .then((res) => {
       console.log('getComments() success', res.data);
       comments.value = res.data;

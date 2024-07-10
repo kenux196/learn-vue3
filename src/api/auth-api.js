@@ -1,5 +1,3 @@
-import { data } from 'autoprefixer';
-
 export default (instance) => ({
   login(id, password) {
     return instance.post('/login', {

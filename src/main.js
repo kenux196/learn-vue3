@@ -2,7 +2,6 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import piniaPersist from 'pinia-plugin-persist';
 import { Quasar, SessionStorage, Notify } from 'quasar';
-import axios from 'axios';
 
 // import icon libs
 import '@quasar/extras/material-icons/material-icons.css';
