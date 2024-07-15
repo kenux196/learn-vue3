@@ -38,6 +38,5 @@
     "postcss": "^8.4.39",
     "prettier": "^2.8.8",
     "vite": "^5.1.7"
-  },
-  "packageManager": "yarn@4.3.1"
+  }
 }
