@@ -10,6 +10,10 @@ const chartjsRoutes = {
       path: 'chart2',
       component: () => import('@/pages/charjs-sample/ChartPage2.vue'),
     },
+    {
+      path: 'echart',
+      component: () => import('@/pages/charjs-sample/EchartPage1.vue')
+    }
   ],
 };
 

@@ -4,6 +4,7 @@
       <q-tabs v-model="tab" inline-label align="left" class="bg-primary text-white shadow-2">
         <q-route-tab name="chart1" icon="analytics" label="차트1" to="/chart-js/chart1" />
         <q-route-tab name="chart2" icon="trending_up" label="차트2" to="/chart-js/chart2" />
+        <q-route-tab name="echart" icon="trending_up" label="echart" to="/chart-js/echart" />
       </q-tabs>
     </div>
     <RouterView class="q-px-md" />
