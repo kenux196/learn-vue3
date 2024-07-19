@@ -31,7 +31,7 @@ export const useCounterStore = defineStore('counter', () => {
   const persist = () => {
     return {
       enable: true,
-      strategies: [{ Storage: localStorage }],
+      strategies: [{ storage: localStorage }],
     };
   };
 
@@ -75,5 +75,8 @@ export const useUserStore = defineStore('storeUser', {
   },
   persist: {
     enabled: true,
+    strategies: [{
+      storage: localStorage
+    }],
   },
 });
