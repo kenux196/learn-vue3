@@ -1,6 +1,5 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-import piniaPersist from 'pinia-plugin-persist';
 import { Quasar, SessionStorage, Notify } from 'quasar';
 
 // import icon libs
@@ -14,11 +13,14 @@ import App from './App.vue';
 import router from './router';
 import { createI18n } from 'vue-i18n';
 import messages from '@/i18n';
+
+import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
+
 import { api } from './api/api';
 import { useAppStore } from './stores/appStore';
 
 const pinia = createPinia();
-pinia.use(piniaPersist);
+pinia.use(piniaPluginPersistedState);
 
 const i18n = createI18n({
   legacy: false, // composition api이면 legacy는 false

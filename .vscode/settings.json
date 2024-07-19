@@ -13,13 +13,7 @@
     "vue": "html"
   },
   "eslint.format.enable": true,
-  "eslint.validate": [
-    "vue",
-    "javascript",
-    "javascriptreact",
-    "html",
-    "json"
-  ],
+  "eslint.validate": ["vue", "javascript", "javascriptreact", "html", "json"],
   "eslint.workingDirectories": [
     {
       "mode": "auto"
@@ -57,7 +51,5 @@
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
-  },
-  "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
+  }
 }

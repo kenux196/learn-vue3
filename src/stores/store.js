@@ -76,7 +76,8 @@ export const useUserStore = defineStore('storeUser', {
   persist: {
     enabled: true,
     strategies: [{
-      storage: localStorage
+      storage: localStorage,
+      a
     }],
   },
 });
