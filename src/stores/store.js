@@ -75,9 +75,13 @@ export const useUserStore = defineStore('storeUser', {
   },
   persist: {
     enabled: true,
-    strategies: [{
-      storage: localStorage,
-      a
-    }],
+    storage: localStorage, // default : localstorage
+    paths: ['accessToken', 'lastName'], // 특정값만 지정해서 저장.
+    beforeRestore: (ctx) => {
+      console.log(`about to restore '${ctx.store.$id}`);
+    },
+    afterRestore: (ctx) => {
+      console.log(`just restored '${ctx.store.$id}'`);
+    },
   },
 });
