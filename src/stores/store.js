@@ -78,9 +78,11 @@ export const useUserStore = defineStore('storeUser', {
     storage: localStorage, // default : localstorage
     paths: ['accessToken', 'lastName'], // 특정값만 지정해서 저장.
     beforeRestore: (ctx) => {
+      // 복구전 호출되는 콜백
       console.log(`about to restore '${ctx.store.$id}`);
     },
     afterRestore: (ctx) => {
+      // 복구 후 호출되는 콜백
       console.log(`just restored '${ctx.store.$id}'`);
     },
   },
