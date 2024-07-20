@@ -26,6 +26,10 @@ const vueRoutes = {
       path: 'login',
       component: () => import('@/pages/vue-sample/LoginPage.vue'),
     },
+    {
+      path: 'vue-query',
+      component: () => import('@/pages/vue-sample/VueQueryTestPage.vue'),
+    },
   ],
 };
 

@@ -18,6 +18,7 @@ import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
 
 import { api } from './api/api';
 import { useAppStore } from './stores/appStore';
+import { VueQueryPlugin } from 'vue-query';
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedState);
@@ -40,6 +41,8 @@ app.config.errorHandler = (err) => {
 app.use(pinia).use(router).use(i18n).use(Quasar, {
   plugins: { SessionStorage, Notify },
 });
+
+app.use(VueQueryPlugin);
 
 app.config.globalProperties.$api = api;
 app.config.globalProperties.$appStore = useAppStore();

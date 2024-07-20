@@ -8,6 +8,7 @@
         <q-route-tab name="store" label="Store" to="/vue/store" />
         <q-route-tab name="utils" label="utils" to="/vue/utils" />
         <q-route-tab name="login" label="login" to="/vue/login" />
+        <q-route-tab name="vue-query" label="vue-query" to="/vue/vue-query" />
       </q-tabs>
     </div>
     <RouterView />
