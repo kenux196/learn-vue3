@@ -15,7 +15,9 @@ import { useQueryClient, useQuery, useMutation } from 'vue-query';
 const queryClient = useQueryClient();
 
 // Query
-const { isLoading, isError, data, error } = useQuery(['todos'], getTodos);
+const { isLoading, isError, data, error } = useQuery(['todos'], getTodos, {
+  staleTime: 10 * 1000,
+});
 
 // // Mutation
 // const mutation = useMutation(postTodo, {
