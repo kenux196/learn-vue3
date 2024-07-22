@@ -8,7 +8,7 @@ import commentApi from './comment-api';
 import authApi from './auth-api';
 import jsonplaceholderApi from './jsonplaceholder-api';
 
-export const api = {
+export const $api = {
   auth: authApi(authAxios),
   board: boardApi(withTokenAxios),
   comment: commentApi(commonAxios),

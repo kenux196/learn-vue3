@@ -25,9 +25,8 @@
 </template>
 
 <script setup>
-import { ref, getCurrentInstance, onMounted } from 'vue';
-
-const { proxy } = getCurrentInstance();
+import { $api } from '@/api/api';
+import { ref, onMounted } from 'vue';
 
 const region = ref('Asia/Pacific - KR');
 const regionOptions = ['Asia/Pacific - KR', 'Europe - EU', 'North America/ Latin America - US'];
@@ -39,7 +38,7 @@ const posts = ref([]);
 const comments = ref([]);
 
 function getPost() {
-  proxy.$api.jsonplaceholder
+  $api.jsonplaceholder
     .fetchPosts()
     .then((res) => {
       console.log('getPosts() success', res.data);
@@ -51,7 +50,7 @@ function getPost() {
 }
 
 function getComment() {
-  proxy.$api.jsonplaceholder
+  $api.jsonplaceholder
     .fetchComments()
     .then((res) => {
       console.log('getComments() success', res.data);

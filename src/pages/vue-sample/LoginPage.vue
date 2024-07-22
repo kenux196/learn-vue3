@@ -6,15 +6,14 @@
 </template>
 
 <script setup>
-import { getCurrentInstance, ref } from 'vue';
-
-const { proxy } = getCurrentInstance();
+import { $api } from '@/api/api';
+import { ref } from 'vue';
 
 const userId = ref('kenux');
 const userPassword = ref('password1004');
 
 function loginProcess() {
-  proxy.$api.auth.login(userId.value, userPassword.value);
+  $api.auth.login(userId.value, userPassword.value);
 }
 </script>
 

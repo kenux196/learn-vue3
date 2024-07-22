@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import axios from 'axios';
+import { $api } from '@/api/api';
 import { useQueryClient, useQuery, useMutation } from 'vue-query';
 
 // Access QueryClient instance
@@ -36,8 +36,8 @@ const { isLoading, isError, data, error, isFetching } = useQuery(['todos'], getT
 // }
 
 async function getTodos() {
-  return await axios
-    .get('https://jsonplaceholder.typicode.com/todos')
+  return await $api.jsonplaceholder
+    .fetchTodos()
     .then((res) => {
       return res.data;
     })

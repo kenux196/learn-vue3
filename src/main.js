@@ -16,7 +16,7 @@ import messages from '@/i18n';
 
 import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
 
-import { api } from './api/api';
+// import { api } from './api/api';
 import { useAppStore } from './stores/appStore';
 import { VueQueryPlugin } from 'vue-query';
 
@@ -44,7 +44,7 @@ app.use(pinia).use(router).use(i18n).use(Quasar, {
 
 app.use(VueQueryPlugin);
 
-app.config.globalProperties.$api = api;
+// app.config.globalProperties.$api = api;
 app.config.globalProperties.$appStore = useAppStore();
 
 // 컴포넌트 전역 등록 예시
