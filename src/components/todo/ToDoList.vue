@@ -10,10 +10,10 @@
       <tbody>
         <tr v-for="todoItem in todoList" :key="todoItem.id">
           <td>
-            <a @click="openDetail(todoItem.id)">{{ todoItem.id }}</a>
+            <a href="#" @click="openDetail(todoItem.id)">{{ todoItem.id }}</a>
           </td>
           <td>
-            <a @click="openDetail(todoItem.id)">
+            <a href="#" @click="openDetail(todoItem.id)">
               {{ todoItem.title }}
             </a>
           </td>
@@ -31,28 +31,22 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import ToDoDetailModal from './ToDoDetailModal.vue';
+import axios from 'axios';
 
 const todoList = ref(null);
 const todoData = ref(null);
 
 async function fetchData() {
   todoList.value = null;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/todos`);
-  todoList.value = await res.json();
-  for (const key in todoList.value) {
-    if (Object.hasOwnProperty.call(todoList.value, key)) {
-      const element = todoList.value[key];
-      console.log(element);
-    }
-  }
+  await axios.get('https://jsonplaceholder.typicode.com/todos').then((res) => {
+    todoList.value = res.data;
+  });
 }
 
 async function getDetail(id) {
-  console.log(`getDetail(${id})`);
-  todoData.value = null;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
-  todoData.value = await res.json();
-  console.log(todoData.value);
+  await axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`).then((res) => {
+    todoData.value = res.data;
+  });
 }
 
 onMounted(() => {
