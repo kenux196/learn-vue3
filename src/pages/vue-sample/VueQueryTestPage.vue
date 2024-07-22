@@ -1,6 +1,7 @@
 <template>
   <span v-if="isLoading">Loading...</span>
   <span v-else-if="isError">Error: {{ error.message }}</span>
+  <span v-else-if="isFetching">Refreshing...</span>
   <ul v-else>
     <li v-for="todo in data" :key="todo.id">{{ todo.title }}</li>
   </ul>
@@ -15,7 +16,7 @@ import { useQueryClient, useQuery, useMutation } from 'vue-query';
 const queryClient = useQueryClient();
 
 // Query
-const { isLoading, isError, data, error } = useQuery(['todos'], getTodos, {
+const { isLoading, isError, data, error, isFetching } = useQuery(['todos'], getTodos, {
   staleTime: 10 * 1000,
 });
 
