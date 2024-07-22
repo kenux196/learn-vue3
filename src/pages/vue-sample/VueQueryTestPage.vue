@@ -8,6 +8,7 @@
 </template>
 
 <script setup>
+import axios from 'axios';
 import { useQueryClient, useQuery, useMutation } from 'vue-query';
 
 // Access QueryClient instance
@@ -16,19 +17,28 @@ const queryClient = useQueryClient();
 // Query
 const { isLoading, isError, data, error } = useQuery(['todos'], getTodos);
 
-// Mutation
-const mutation = useMutation(postTodo, {
-  onSuccess: () => {
-    // Invalidate and refetch
-    queryClient.invalidateQueries(['todos']);
-  },
-});
+// // Mutation
+// const mutation = useMutation(postTodo, {
+//   onSuccess: () => {
+//     // Invalidate and refetch
+//     queryClient.invalidateQueries(['todos']);
+//   },
+// });
 
-function onButtonClick() {
-  mutation.mutate({
-    id: Date.now(),
-    title: 'Do Something...',
-  });
+// function onButtonClick() {
+//   mutation.mutate({
+//     id: Date.now(),
+//     title: 'Do Something...',
+//   });
+// }
+
+async function getTodos() {
+  return await axios
+    .get('https://jsonplaceholder.typicode.com/todos')
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {});
 }
 </script>
 
