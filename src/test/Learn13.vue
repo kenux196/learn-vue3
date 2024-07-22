@@ -13,7 +13,7 @@ const { data, error, retry } = useFetch(url);
 <template>
   Load post id:
   <div class="grid">
-    <button v-for="i in 5" @click="id = i">{{ i }}</button>
+    <button v-for="i in 5" :key="i" @click="id = i">{{ i }}</button>
   </div>
 
   <div v-if="error">
