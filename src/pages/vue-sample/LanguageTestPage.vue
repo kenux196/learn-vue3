@@ -14,6 +14,7 @@
   <p>{{ $d(new Date(), 'long') }}</p>
   <p>{{ $d(new Date(), 'long_h_12') }}</p>
   <p>{{ $d(new Date(), 'long_h_24') }}</p>
+  <p>{{ $d('2011-10-10T14:48:00', 'long_h_12') }}</p>
 </template>
 
 <script setup>
