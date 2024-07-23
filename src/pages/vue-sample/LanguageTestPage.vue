@@ -15,6 +15,14 @@
   <p>{{ $d(new Date(), 'long_h_12') }}</p>
   <p>{{ $d(new Date(), 'long_h_24') }}</p>
   <p>{{ $d('2011-10-10T14:48:00', 'long_h_12') }}</p>
+  <p>{{ $n(10000, 'currency') }}</p>
+  <p>{{ $n(10000, 'currency') }}</p>
+  <p>{{ $n(10000, 'currency', { useGrouping: false }) }}</p>
+  <p>{{ $n(987654321, 'currency', { notation: 'compact' }) }}</p>
+  <p>{{ $n(0.99123, 'percent') }}</p>
+  <p>{{ $n(0.99123, 'percent', { minimumFractionDigits: 2 }) }}</p>
+  <p>{{ $n(12.11612345, 'decimal') }}</p>
+  <p>{{ $n(12145281111, 'decimal') }}</p>
 </template>
 
 <script setup>

@@ -19,7 +19,7 @@ import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
 // import { api } from './api/api';
 import { useAppStore } from './stores/appStore';
 import { VueQueryPlugin } from 'vue-query';
-import { datetimeFormats } from './i18n/i18nDateTimeFormat';
+import { datetimeFormats, numberFormats } from './i18n/i18nFormats';
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedState);
@@ -31,6 +31,7 @@ const i18n = createI18n({
   fallbackLocale: 'ko-KR',
   messages: messages,
   datetimeFormats: datetimeFormats,
+  numberFormats: numberFormats,
 });
 
 const app = createApp(App);
