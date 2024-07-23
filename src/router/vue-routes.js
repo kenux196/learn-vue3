@@ -30,6 +30,10 @@ const vueRoutes = {
       path: 'vue-query',
       component: () => import('@/pages/vue-sample/VueQueryTestPage.vue'),
     },
+    {
+      path: 'i18n',
+      component: () => import('@/pages/vue-sample/LanguageTestPage.vue'),
+    },
   ],
 };
 

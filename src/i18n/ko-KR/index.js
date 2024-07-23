@@ -5,4 +5,5 @@ export default {
   failed: '동작 실패',
   success: '동작 성공함',
   jiwon: '지원',
+  hello: '안녕하세요 {name} 님',
 };

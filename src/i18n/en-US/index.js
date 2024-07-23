@@ -5,4 +5,5 @@ export default {
   failed: 'Action failed',
   success: 'Action was successful',
   jiwon: 'jiwon',
+  hello: 'Hello, {name}',
 };
