@@ -6,4 +6,11 @@ export default {
   success: '동작 성공함',
   jiwon: '지원',
   hello: '안녕하세요 {name} 님',
+  book: '책 제목: {0}, 작가: {1}',
+  email: "{account}{'@'}{domain}",
+  the_world: 'the world',
+  dio: 'DIO:',
+  linked: '@:dio @:the_world !!!!',
+  car: 'car | cars',
+  apple: 'no apples | one apple | {count} apples',
 };
