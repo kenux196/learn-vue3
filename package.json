@@ -34,6 +34,7 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.7.2",
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/eslint-config-prettier": "^7.1.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
