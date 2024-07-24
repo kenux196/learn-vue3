@@ -153,3 +153,5 @@ backend/public
 # !.yarn/releases
 # !.yarn/sdks
 # !.yarn/versions
+
+*.tsbuildinfo

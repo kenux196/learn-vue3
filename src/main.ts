@@ -20,11 +20,15 @@ import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
 import { useAppStore } from './stores/appStore';
 import { VueQueryPlugin } from 'vue-query';
 import { datetimeFormats, numberFormats } from './i18n/i18nFormats';
+import enUS from './i18n/en-US/en.json';
+import koKR from './i18n/ko-KR/ko.json';
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedState);
 
-const i18n = createI18n({
+type MessageSchema = typeof koKR;
+
+const i18n = createI18n<[MessageSchema, 'koKR' | 'enUS']>({
   legacy: false, // composition api이면 legacy는 false
   locale: 'ko-KR',
   globalInjection: true,
