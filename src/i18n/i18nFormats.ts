@@ -1,4 +1,6 @@
-const datetimeFormats = {
+import type { DateTimeOptions } from 'vue-i18n';
+
+const datetimeFormats: DateTimeOptions = {
   'en-US': {
     short: {
       year: 'numeric',

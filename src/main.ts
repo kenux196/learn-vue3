@@ -19,7 +19,7 @@ import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
 // import { api } from './api/api';
 import { useAppStore } from '@/stores/appStore';
 import { VueQueryPlugin } from 'vue-query';
-// import { datetimeFormats, numberFormats } from '@/i18n/i18nFormats';
+import { datetimeFormats, numberFormats } from '@/i18n/i18nFormats';
 import koKR from './i18n/ko-KR/ko.json';
 import enUS from './i18n/en-US/en.json';
 
@@ -37,8 +37,8 @@ const i18n = createI18n<[MessageSchema, 'ko-KR' | 'en-US']>({
     'en-US': enUS,
     'ko-KR': koKR,
   },
-  // datetimeFormats: datetimeFormats,
-  // numberFormats: numberFormats,
+  datetimeFormats: datetimeFormats,
+  numberFormats: numberFormats,
 });
 
 const app = createApp(App);
