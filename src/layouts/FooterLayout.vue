@@ -11,7 +11,7 @@
     <div class="col-1 q-mr-sm">Quasar v{{ $q.version }}</div>
   </q-footer>
 </template>
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import LanguageSwitcher from '@/layouts/components/LanguageSwitcher.vue';
 

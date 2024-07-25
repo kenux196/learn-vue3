@@ -10,7 +10,7 @@
   </q-drawer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import MainMenuItem from './components/MainMenuItem.vue';
 
 const linksList = [

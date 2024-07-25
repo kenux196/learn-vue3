@@ -17,10 +17,9 @@
   </q-select>
 </template>
 
-<script setup>
+<script setup lang="ts">
 console.log('This.sislslkdsjflaksdj');
 import { useI18n } from 'vue-i18n';
-console.log('This.sislslkdsjflaksdjwwwww');
 // const { locale } = useI18n({
 //   useScope: 'global',
 // });

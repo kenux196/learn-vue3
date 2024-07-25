@@ -9,7 +9,7 @@
   </q-layout>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import Header from '@/layouts/HeaderLayout.vue';
 import Footer from '@/layouts/FooterLayout.vue';
