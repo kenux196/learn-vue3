@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.11",
-    "@quasar/vite-plugin": "^1.6.0",
     "@vueuse/core": "^10.10.0",
     "axios": "^1.6.7",
     "chart.js": "^4.4.3",
@@ -27,7 +26,6 @@
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "quasar": "^2.15.4",
-    "sass": "^1.75.0",
     "vue": "^3.4.20",
     "vue-chartjs": "^5.3.1",
     "vue-echarts": "^6.7.3",
@@ -36,6 +34,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@quasar/vite-plugin": "^1.7.0",
     "@rushstack/eslint-patch": "^1.8.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/jsdom": "^21.1.7",
@@ -44,13 +43,12 @@
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/tsconfig": "^0.5.1",
-    "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "jsdom": "^24.1.1",
     "npm-run-all2": "^6.2.0",
-    "postcss": "^8.4.39",
     "prettier": "^3.2.5",
+    "sass": "^1.33.0",
     "typescript": "~5.4.0",
     "vite": "^5.3.1",
     "vue-tsc": "^2.0.21"
