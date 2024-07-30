@@ -30,6 +30,8 @@ const datetimeFormats = {
       hour: 'numeric',
       minute: 'numeric',
       hour12: false,
+      timeZoneName: 'short',
+      timezone: 'Pacific/Niue',
     },
   },
   'ko-KR': {
@@ -61,6 +63,8 @@ const datetimeFormats = {
       hour: 'numeric',
       minute: 'numeric',
       hour12: false,
+      timeZoneName: 'short',
+      timezone: 'Asia/Seoul',
     },
   },
 };
