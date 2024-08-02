@@ -30,7 +30,8 @@
     "vue-echarts": "^6.7.3",
     "vue-i18n": "^9.13.1",
     "vue-query": "^1.26.0",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.7.2",
