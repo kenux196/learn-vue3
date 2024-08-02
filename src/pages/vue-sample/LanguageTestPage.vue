@@ -23,15 +23,45 @@
   <p>{{ $n(0.99123, 'percent', { minimumFractionDigits: 2 }) }}</p>
   <p>{{ $n(12.11612345, 'decimal') }}</p>
   <p>{{ $n(12145281111, 'decimal') }}</p>
+
+  <h3>Day.js 테스트</h3>
+  <p>현재 시간(UTC): {{ today }}</p>
+  <p>한국어 12H Asia/Seoul: {{ displayDateTime('12h', today, 'Asia/Seoul') }}</p>
+  <p>영어 12H Asia/Seoul: {{ displayDateTime('12h', today, 'Asia/Seoul') }}</p>
+  <p>24H Asia/Seoul: {{ displayDateTime('24h', today, 'Asia/Seoul') }}</p>
+
+  <p>한국어 12H Europe/London: {{ displayDateTime('12h', today, 'Europe/London') }}</p>
+  <p>영어 12H Europe/London: {{ displayDateTime('12h', today, 'Europe/London') }}</p>
+  <p>24H Europe/London: {{ displayDateTime('24h', today, 'Europe/London') }}</p>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+
+import dayjs from 'dayjs';
+import 'dayjs/locale/ko';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import useAppStore from '@/stores/appStore';
 const { t } = useI18n();
+const appStore = useAppStore();
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+const today = ref(new Date().toISOString());
 
 function greeting() {
   return t('hello', { name: 'kenux' });
 }
+
+const displayDateTime = (type, date, timezone) => {
+  if (type === '12h') {
+    return dayjs(date).tz(timezone).locale(appStore.language).format('YYYY-MM-DD A h:mm');
+  }
+  return dayjs(date).tz(timezone).locale(appStore.language).format('YYYY-MM-DD HH:mm');
+};
 </script>
 
 <style lang="scss" scoped></style>

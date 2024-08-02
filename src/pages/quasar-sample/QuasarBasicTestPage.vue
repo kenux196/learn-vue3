@@ -16,7 +16,7 @@
   <div class="m-5">
     <div class="text-h6 text-bold">i18n 테스트</div>
     <span>설정된 언어: {{ selectedLanguage }} / {{ $t('failed') }} / {{ $t('success') }}</span>
-    <div class="text-bold">{{ currentLocale }}</div>
+    <div class="text-bold">현재 로케일: {{ currentLocale }}</div>
     <div class="text-bold">{{ $t('jiwon') }}</div>
   </div>
   <div style="width: 60%; border: 1px; border-style: dashed">
@@ -62,20 +62,22 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import useCounterStore from '@/stores/example-store';
 import { useQuasar } from 'quasar';
+import { useCounterStore } from '@/stores/store';
 
 const $q = useQuasar();
 const lang = ref($q.lang.isoName);
 console.log('platform type:', $q.platform);
 console.log('lang: ', $q.lang);
 
+const counterStore = useCounterStore();
+
 const counter = computed(() => {
-  return useCounterStore().counter;
+  return counterStore.count;
 });
 
 const doubleCount = computed(() => {
-  return useCounterStore().doubleCount;
+  return counterStore.doubleCount;
 });
 
 const selectedLanguage = computed(() => {
@@ -89,11 +91,11 @@ const currentLocale = computed(() => {
 const hello = ref('Hello Quasar!!');
 
 function increaseeCounter() {
-  useCounterStore().increment();
+  counterStore.increment();
 }
 
 function decreaseeCounter() {
-  useCounterStore().decrement();
+  counterStore.decrement();
 }
 </script>
 

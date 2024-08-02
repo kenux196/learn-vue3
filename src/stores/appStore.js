@@ -1,9 +1,15 @@
 import { defineStore } from 'pinia';
 
 export const useAppStore = defineStore('appStore', {
-  state: () => ({
-    counter: 0,
-  }),
+  state: () => {
+    return {
+      counter: 0,
+      language: 'ko',
+      locale: 'ko-KR',
+      timezone: 'Asia/Seoul',
+      timeDisplay: '12h',
+    };
+  },
   getters: {
     doubleCount: (state) => state.counter * 2,
   },
@@ -14,6 +20,10 @@ export const useAppStore = defineStore('appStore', {
     decrement() {
       this.counter--;
     },
+  },
+  persist: {
+    enabled: true,
+    storage: localStorage,
   },
 });
 

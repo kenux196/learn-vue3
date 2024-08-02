@@ -2,6 +2,7 @@
   <q-select
     v-model="locale"
     :options="localeOptions"
+    @update:model-value="save"
     dark
     dense
     borderless
@@ -18,13 +19,14 @@
 </template>
 
 <script setup>
-console.log('This.sislslkdsjflaksdj');
+import useAppStore from '@/stores/appStore';
 import { useI18n } from 'vue-i18n';
-console.log('This.sislslkdsjflaksdjwwwww');
 // const { locale } = useI18n({
 //   useScope: 'global',
 // });
 const { availableLocales, locale } = useI18n();
+const appStore = useAppStore();
+
 console.log('가능한 로케일 : ' + availableLocales);
 const localeOptions = [
   {
@@ -36,6 +38,12 @@ const localeOptions = [
     label: 'English',
   },
 ];
+
+function save() {
+  appStore.locale = locale.value;
+  console.log('🚀 ~ save ~ locale.value:', locale.value);
+  appStore.language = locale.value.split('-')[0];
+}
 </script>
 
 <style lang="scss" scoped></style>
