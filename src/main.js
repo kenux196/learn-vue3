@@ -9,14 +9,12 @@ import '@quasar/extras/material-icons/material-icons.css';
 import 'quasar/src/css/index.sass';
 
 import App from './App.vue';
-// import App from './test/SampleSlotParent.vue';
 import router from './router';
 import { createI18n } from 'vue-i18n';
 import messages from '@/i18n';
 
 import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
 
-// import { api } from './api/api';
 import { useAppStore } from './stores/appStore';
 import { VueQueryPlugin } from 'vue-query';
 import { datetimeFormats, numberFormats } from './i18n/i18nFormats';
