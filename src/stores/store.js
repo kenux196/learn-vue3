@@ -27,15 +27,12 @@ export const useCounterStore = defineStore('counter', () => {
   function $reset() {
     count.value = 0;
   }
-
-  const persist = () => {
-    return {
-      enable: true,
-      strategies: [{ storage: localStorage }],
-    };
-  };
-
-  return { count, name, doubleCount, increment, decrement, $reset, persist };
+  return { count, name, doubleCount, increment, decrement, $reset };
+}, {
+  persist: {
+    enable: true,
+    storage: sessionStorage
+  }
 });
 
 export const useCounterOptionApiStore = defineStore('counter2', {
@@ -57,6 +54,10 @@ export const useCounterOptionApiStore = defineStore('counter2', {
     decrement() {
       this.count--;
     },
+  },
+  persist: {
+    enabled: true,
+    storage: localStorage, // default : localstorage
   },
 });
 
