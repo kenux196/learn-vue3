@@ -5,6 +5,7 @@ import vueRoutes from './vue-routes';
 
 const routes = [
   { path: '/', component: () => import('@/pages/LandingPage.vue') },
+  { path: '/learn-vue3', component: () => import('@/pages/LandingPage.vue') },
   {
     path: '/posts',
     component: () => import('@/pages/PostsPage.vue'),
