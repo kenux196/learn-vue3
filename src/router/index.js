@@ -1,5 +1,10 @@
-import { createRouter, createMemoryHistory, createWebHistory, createWebHashHistory } from 'vue-router';
-import routes from './routes';
+import {
+  createRouter,
+  createMemoryHistory,
+  createWebHistory,
+  createWebHashHistory,
+} from 'vue-router';
+import mainRoutes from './main-routes';
 
 const createHistory = import.meta.env.VITE_SERVER
   ? createMemoryHistory
@@ -9,7 +14,7 @@ const createHistory = import.meta.env.VITE_SERVER
 
 const router = createRouter({
   scrollBehavior: () => ({ left: 0, top: 0 }),
-  routes,
+  routes: mainRoutes,
   history: createWebHistory(),
 });
 

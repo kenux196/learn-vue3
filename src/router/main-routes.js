@@ -3,7 +3,7 @@ import nestedRoutes from './nested-routes';
 import quasrRoutes from './quasar-routes';
 import vueRoutes from './vue-routes';
 
-const routes = [
+const maintRoutes = [
   { path: '/', component: () => import('@/pages/LandingPage.vue') },
   { path: '/learn-vue3', component: () => import('@/pages/LandingPage.vue') },
   {
@@ -39,4 +39,4 @@ const routes = [
   },
 ];
 
-export default routes;
+export default maintRoutes;
