@@ -8,6 +8,7 @@ import { quasar, transformAssetUrls } from '@quasar/vite-plugin';
 export default ({ mode }) => {
   const env = { ...process.env, ...loadEnv(mode, process.cwd()) };
   return defineConfig({
+    base: './',
     plugins: [
       vue({
         template: { transformAssetUrls },
