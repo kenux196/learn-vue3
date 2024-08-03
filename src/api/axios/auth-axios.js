@@ -1,4 +1,3 @@
-import useAppStore from '@/stores/appStore';
 import axios from 'axios';
 
 const authAxios = axios.create();
@@ -10,8 +9,6 @@ authAxios.interceptors.request.use(
       password: config.data.userPassword,
     };
     config.data = '';
-    const appStore = useAppStore();
-    console.log(appStore.counter);
     return config;
   },
   (error) => {
