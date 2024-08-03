@@ -3,14 +3,14 @@ import nestedRoutes from './nested-routes';
 import quasrRoutes from './quasar-routes';
 import vueRoutes from './vue-routes';
 
-const maintRoutes = [
-  { path: '/', component: () => import('@/pages/LandingPage.vue') },
-  { path: '/learn-vue3', component: () => import('@/pages/LandingPage.vue') },
+const mainRoutes = [
+  { path: '/', component: () => import('@/pages/DashboardPage.vue') },
+  { path: '/learn-vue3', component: () => import('@/pages/DashboardPage.vue') },
+  { path: '/dashboard', component: () => import('@/pages/DashboardPage.vue') },
   {
     path: '/posts',
     component: () => import('@/pages/PostsPage.vue'),
   },
-  { path: '/dashboard', component: () => import('@/pages/DashboardPage.vue') },
   {
     path: '/settings',
     component: () => import('@/pages/SettingsPage.vue'),
@@ -27,6 +27,10 @@ const maintRoutes = [
     path: '/json-test',
     component: () => import('@/pages/JsonLoadView.vue'),
   },
+  {
+    path: '/about',
+    component: () => import('@/pages/AboutPage.vue'),
+  },
   nestedRoutes,
   quasrRoutes,
   chartjsRoutes,
@@ -39,4 +43,4 @@ const maintRoutes = [
   },
 ];
 
-export default maintRoutes;
+export default mainRoutes;

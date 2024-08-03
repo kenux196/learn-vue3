@@ -15,11 +15,6 @@ import MainMenuItem from './components/MainMenuItem.vue';
 
 const linksList = [
   {
-    title: 'Home',
-    icon: 'home',
-    link: '/',
-  },
-  {
     title: 'Dashboard',
     icon: 'dashboard',
     link: '/dashboard',
@@ -58,6 +53,11 @@ const linksList = [
     title: '구구단 테스트',
     icon: 'toys',
     link: '/gugudan',
+  },
+  {
+    title: 'About',
+    icon: 'lightbulb',
+    link: '/about',
   },
 ];
 </script>
