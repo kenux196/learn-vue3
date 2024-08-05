@@ -5,59 +5,63 @@
         <q-icon name="menu"></q-icon>
         Menu
       </q-item-label>
-      <MainMenuItem v-for="link in linksList" :key="link.title" v-bind="link" />
+      <MainMenuItem v-for="menu in mainMenus" :key="menu.title" v-bind="menu" />
     </q-list>
   </q-drawer>
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n';
 import MainMenuItem from './components/MainMenuItem.vue';
+import { ref } from 'vue';
 
-const linksList = [
+const { t } = useI18n();
+
+const mainMenus = ref([
   {
-    title: 'Dashboard',
+    title: 'menu.main.dashboard',
     icon: 'dashboard',
     link: '/dashboard',
   },
   {
-    title: 'Posts',
+    title: 'menu.main.posts',
     icon: 'article',
     link: '/posts',
   },
   {
-    title: 'Settings',
+    title: 'menu.main.settings',
     icon: 'settings',
     link: '/settings',
   },
   {
-    title: '중첩된 라우팅 연습',
+    title: 'menu.main.nested-routing',
     icon: 'auto_awesome_mosaic',
     link: '/nested-route',
   },
   {
-    title: 'Quasar Samples',
+    title: 'menu.main.quasar',
     icon: 'memory',
     link: '/quasar',
   },
   {
-    title: 'Chart.js Test',
+    title: 'menu.main.charts',
     icon: 'bar_chart',
     link: '/chart-js',
   },
   {
-    title: 'Vue3 Test',
+    title: 'menu.main.vue',
     icon: 'laptop',
     link: '/vue',
   },
   {
-    title: '구구단 테스트',
+    title: 'menu.main.gugudan',
     icon: 'toys',
     link: '/gugudan',
   },
   {
-    title: 'About',
+    title: 'menu.main.about',
     icon: 'lightbulb',
     link: '/about',
   },
-];
+]);
 </script>

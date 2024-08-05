@@ -1,0 +1,26 @@
+{
+  "failed": "동작 실패",
+  "success": "동작 성공함",
+  "jiwon": "지원",
+  "hello": "안녕하세요. {name} 님",
+  "book": "책 제목: {0}, Author: {1}",
+  "email": "{account}{'@'}{domain}",
+  "the_world": "the world",
+  "dio": "DIO:",
+  "linked": "@:dio @:the_world !!!!",
+  "car": "car | cars",
+  "apple": "no apples | one apple | {count } apples",
+  "menu": {
+    "main": {
+      "dashboard": "대시보드",
+      "posts": "게시물",
+      "settings": "설정",
+      "nested-routing": "중첩된 라우팅",
+      "quasar": "Quasar 프레임워크",
+      "charts": "차트",
+      "vue": "vue3 연습장",
+      "gugudan": "구구단 테스트",
+      "about": "여기는?"
+    }
+  }
+}

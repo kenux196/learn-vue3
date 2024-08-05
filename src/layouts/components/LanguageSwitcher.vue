@@ -2,7 +2,7 @@
   <q-select
     v-model="locale"
     :options="localeOptions"
-    @update:model-value="save"
+    @update:model-value="saveLocaleAndLanguage"
     dark
     dense
     borderless
@@ -20,6 +20,7 @@
 
 <script setup>
 import useAppStore from '@/stores/appStore';
+import { onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 // const { locale } = useI18n({
 //   useScope: 'global',
@@ -39,11 +40,15 @@ const localeOptions = [
   },
 ];
 
-function save() {
+function saveLocaleAndLanguage() {
   appStore.locale = locale.value;
   console.log('🚀 ~ save ~ locale.value:', locale.value);
   appStore.language = locale.value.split('-')[0];
 }
+
+onMounted(() => {
+  locale.value = appStore.locale;
+});
 </script>
 
 <style lang="scss" scoped></style>

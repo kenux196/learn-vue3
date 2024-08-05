@@ -10,14 +10,12 @@ import 'quasar/src/css/index.sass';
 
 import App from './App.vue';
 import router from './router';
-import { createI18n } from 'vue-i18n';
-import messages from '@/i18n';
+import i18n from '@/locale/i18n';
 
 import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
 
 import { useAppStore } from './stores/appStore';
 import { VueQueryPlugin } from 'vue-query';
-import { datetimeFormats, numberFormats } from './i18n/i18nFormats';
 
 const app = createApp(App);
 app.use(router);
@@ -26,20 +24,11 @@ app.use(router);
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedState);
 app.use(pinia);
+
 const appStore = useAppStore();
 console.log('🚀 ~ appStore:', appStore);
 // app.config.globalProperties.$appStore = appStore;
 
-// i18n
-const i18n = createI18n({
-  legacy: false, // composition api이면 legacy는 false
-  locale: appStore.locale,
-  globalInjection: true,
-  fallbackLocale: 'ko-KR',
-  messages: messages,
-  datetimeFormats: datetimeFormats,
-  numberFormats: numberFormats,
-});
 app.use(i18n);
 
 // quasar

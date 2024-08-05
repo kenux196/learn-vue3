@@ -1,0 +1,26 @@
+{
+  "failed": "Action failed",
+  "success": "Action was successful",
+  "jiwon": "jiwon",
+  "hello": "Hello,  {name}",
+  "book": "Book Title: { 0}, Author: {    1  }",
+  "email": "{account}{'@'}{domain}",
+  "the_world": "the world",
+  "dio": "DIO:",
+  "linked": "@:dio @:the_world !!!!",
+  "car": "car | cars",
+  "apple": "no apples | one apple | {count } apples",
+  "menu": {
+    "main": {
+      "dashboard": "dashboard",
+      "posts": "posts",
+      "settings": "settings",
+      "nested-routing": "nested routing",
+      "quasar": "Quasar framework",
+      "charts": "charts",
+      "vue": "vue3 playground",
+      "gugudan": "gugudan test",
+      "about": "about this?"
+    }
+  }
+}
