@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+import { acceptHMRUpdate, defineStore } from 'pinia';
 
 export const useAppStore = defineStore('appStore', {
   state: () => {
@@ -17,5 +17,9 @@ export const useAppStore = defineStore('appStore', {
     storage: localStorage,
   },
 });
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useAppStore, import.meta.hot));
+}
 
 export default useAppStore;
