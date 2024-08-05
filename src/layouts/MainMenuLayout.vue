@@ -11,11 +11,8 @@
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n';
 import MainMenuItem from './components/MainMenuItem.vue';
 import { ref } from 'vue';
-
-const { t } = useI18n();
 
 const mainMenus = ref([
   {
