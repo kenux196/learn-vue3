@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o as c,c as o}from"./index-FsW0pkv8.js";const r={};function t(n,a){return c(),o("div",null,"Subpage 1")}const f=e(r,[["render",t]]);export{f as default};
