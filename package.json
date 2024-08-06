@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.11",
-    "@quasar/vite-plugin": "^1.6.0",
     "@vueuse/core": "^10.10.0",
     "axios": "^1.6.7",
     "chart.js": "^4.4.3",
@@ -25,7 +24,6 @@
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "quasar": "^2.15.4",
-    "sass": "^1.75.0",
     "vue": "^3.4.29",
     "vue-chartjs": "^5.3.1",
     "vue-echarts": "^6.7.3",
@@ -35,7 +33,7 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.25.1",
+    "@quasar/vite-plugin": "^1.7.0",
     "@rushstack/eslint-patch": "^1.8.0",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/eslint-config-prettier": "^9.0.0",
