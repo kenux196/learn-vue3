@@ -34,7 +34,6 @@
 </template>
 
 <script setup>
-import { data } from 'autoprefixer';
 import { onMounted, reactive } from 'vue';
 
 const columns = [

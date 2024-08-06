@@ -16,9 +16,10 @@ export default ({ mode }) => {
 
       // @quasar/plugin-vite options list:
       // https://github.com/quasarframework/quasar/blob/dev/vite-plugin/index.d.ts
-      quasar({
-        sassVariables: '@/quasar.variables.scss',
-      }),
+      // quasar({
+      //   sassVariables: '@/quasar.variables.scss',
+      // }),
+      quasar(),
     ],
     resolve: {
       alias: {
