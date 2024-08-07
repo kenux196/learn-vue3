@@ -116,15 +116,10 @@ const chartOptions = ref({
       },
     },
   },
-  responsive: true,
   maintainAspectRatio: false,
 });
 
 const DATA_COUNT = 1000;
-function getIndexGap() {
-  return DATA_COUNT / 10;
-}
-
 const dataList = [];
 const labels = [];
 function getDatas() {
@@ -146,7 +141,7 @@ function getRandomData() {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .chart-area {
   width: 800px;
   background-color: antiquewhite;
