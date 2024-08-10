@@ -10,6 +10,7 @@
         <q-route-tab name="login" label="login" to="/vue/login" />
         <q-route-tab name="vue-query" label="vue-query" to="/vue/vue-query" />
         <q-route-tab name="language" label="language" to="/vue/i18n" />
+        <q-route-tab name="export" label="export" to="/vue/export" />
       </q-tabs>
     </div>
     <RouterView />

@@ -34,6 +34,10 @@ const vueRoutes = {
       path: 'i18n',
       component: () => import('@/pages/vue-sample/LanguageTestPage.vue'),
     },
+    {
+      path: 'export',
+      component: () => import('@/pages/vue-sample/ExportToExcel.vue'),
+    },
   ],
 };
 
