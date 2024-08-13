@@ -61,7 +61,7 @@ const chartOptions = ref({
       ticks: {
         beginAtZero: true,
         callback: function (val, index, ticks) {
-          // console.log('ticks: ', ticks[index]);
+          console.log('ticks: ', ticks[index]);
           const result2 = index % 1 === 0 ? this.getLabelForValue(val) : '';
           return result2;
         },

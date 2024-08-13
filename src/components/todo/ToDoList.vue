@@ -31,7 +31,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import ToDoDetailModal from './ToDoDetailModal.vue';
-import axios from 'axios';
 import { $api } from '@/api/api';
 
 const todoList = ref(null);
@@ -39,9 +38,11 @@ const todoData = ref(null);
 
 async function fetchData() {
   todoList.value = null;
-  await $api.jsonplaceholder.fetchTodos('https://jsonplaceholder.typicode.com/todos').then((res) => {
-    todoList.value = res.data;
-  });
+  await $api.jsonplaceholder
+    .fetchTodos('https://jsonplaceholder.typicode.com/todos')
+    .then((res) => {
+      todoList.value = res.data;
+    });
 }
 
 async function getDetail(id) {

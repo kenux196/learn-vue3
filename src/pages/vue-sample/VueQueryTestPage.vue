@@ -10,10 +10,11 @@
 
 <script setup>
 import { $api } from '@/api/api';
-import { useQueryClient, useQuery, useMutation } from 'vue-query';
+// import { useQueryClient, useQuery, useMutation } from 'vue-query';
+import { useQuery } from 'vue-query';
 
 // Access QueryClient instance
-const queryClient = useQueryClient();
+// const queryClient = useQueryClient();
 
 // Query
 const { isLoading, isError, data, error, isFetching } = useQuery(['todos'], getTodos, {
@@ -41,7 +42,7 @@ async function getTodos() {
     .then((res) => {
       return res.data;
     })
-    .catch((err) => {});
+    .catch((err) => console.error(err));
 }
 </script>
 

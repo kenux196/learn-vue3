@@ -23,6 +23,7 @@ onMounted(() => {
 });
 
 watch(todoId, (newTodoId) => {
+  console.log('🚀 ~ watch ~ newTodoId:', newTodoId);
   fetchData();
 });
 </script>

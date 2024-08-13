@@ -34,36 +34,36 @@ const addMember = () => {
   });
 };
 
-const update = (mid, key, val) => {
-  const findMember = getMember(mid);
-  if (findMember) {
-    findMember[key] = val;
-  }
-};
+// const update = (mid, key, val) => {
+//   const findMember = getMember(mid);
+//   if (findMember) {
+//     findMember[key] = val;
+//   }
+// };
 
-const store = (mid) => {
-  const tempMembers = $q.sessionStorage.getItem('members') || [];
-  const findMember = getMember(mid);
-  const findTempMember = tempMembers.find((m) => m.mid === mid);
+// const store = (mid) => {
+//   const tempMembers = $q.sessionStorage.getItem('members') || [];
+//   const findMember = getMember(mid);
+//   const findTempMember = tempMembers.find((m) => m.mid === mid);
 
-  if (findMember) {
-    findMember.editable = false;
+//   if (findMember) {
+//     findMember.editable = false;
 
-    if (findTempMember) {
-      findTempMember.name = findMember.name;
-      findTempMember.team = findMember.team;
-      findTempMember.contact = findMember.concat;
-    } else {
-      tempMembers.unshift(findMember);
-    }
+//     if (findTempMember) {
+//       findTempMember.name = findMember.name;
+//       findTempMember.team = findMember.team;
+//       findTempMember.contact = findMember.concat;
+//     } else {
+//       tempMembers.unshift(findMember);
+//     }
 
-    $q.sessionStorage.set('members', tempMembers);
-  }
-};
+//     $q.sessionStorage.set('members', tempMembers);
+//   }
+// };
 
-function getMember(mid) {
-  return members.find((m) => m.mid === mid);
-}
+// function getMember(mid) {
+//   return members.find((m) => m.mid === mid);
+// }
 
 const upsert = (data, done) => {
   const findMember = members.find((m) => m.mid === data.mid);

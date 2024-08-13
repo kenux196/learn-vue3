@@ -5,6 +5,7 @@ const birdsRouter = express.Router();
 birdsRouter.use((req, res, next) => {
   const locale = new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' });
   const now = new Date(locale);
+  console.log('🚀 ~ birdsRouter.use ~ now:', now);
   console.log('Time: ', locale);
   next();
 });

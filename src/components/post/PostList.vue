@@ -5,7 +5,7 @@
       <th>title</th>
     </thead>
     <tbody>
-      <tr v-for="post in posts">
+      <tr v-for="post in posts" :key="post.id">
         <td>
           <a @click="showPostContent(post.id)">{{ post.id }}</a>
         </td>

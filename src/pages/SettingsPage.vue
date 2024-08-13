@@ -4,14 +4,14 @@
     <div class="text-h6 q-mr-md" style="width: 100px">region</div>
     <q-select v-model="region" :options="regionOptions" dense style="width: 400px" />
   </div>
-  <!-- <div class="flex q-mx-md">
+  <div class="flex q-mx-md">
     <div class="text-h6 q-mr-md" style="width: 100px">관리국가</div>
     <q-select v-model="country" :options="countryOptions" dense style="width: 400px">
       <template v-slot:append>
         <q-icon name="close" @click.stop.prevent="model = ''" class="cursor-pointer" />
       </template>
     </q-select>
-  </div> -->
+  </div>
   <div>
     <li v-for="post in posts" :key="post.id">
       <span>{{ post.id }} {{ post.title }}</span>

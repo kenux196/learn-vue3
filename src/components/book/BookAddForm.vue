@@ -18,7 +18,7 @@
   </dialog>
 </template>
 <script setup>
-import { ref, reactive } from 'vue';
+import { reactive } from 'vue';
 import { Book } from '../../js/book.js';
 import { bookMemoryRepository } from '../../js/BookRepository.js';
 

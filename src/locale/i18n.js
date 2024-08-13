@@ -1,4 +1,3 @@
-import useAppStore from '@/stores/appStore';
 import { createI18n } from 'vue-i18n';
 
 import enUS from '@/locale/en.json';
