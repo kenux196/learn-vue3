@@ -6,7 +6,16 @@
     <div class="q-pa-sm bg-primary">
       <div class="row justify-between">
         <div class="row items-center q-gutter-x-xs">
-          <q-btn v-if="editable" dense flat round size="sm" color="negative" icon="playlist_remove" @click="remove" />
+          <q-btn
+            v-if="editable"
+            dense
+            flat
+            round
+            size="sm"
+            color="negative"
+            icon="playlist_remove"
+            @click="remove"
+          />
           <div class="text-center text-white">멤버</div>
         </div>
         <div>
@@ -22,7 +31,16 @@
             @click="editable = true"
           />
           <template v-else>
-            <q-btn unelevated dense round flat size="sm" color="white" icon="close" @click="cancel" />
+            <q-btn
+              unelevated
+              dense
+              round
+              flat
+              size="sm"
+              color="white"
+              icon="close"
+              @click="cancel"
+            />
             <q-btn unelevated dense round size="sm" color="positive" icon="check" @click="upsert" />
           </template>
         </div>

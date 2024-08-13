@@ -138,21 +138,13 @@ function onhashchange() {
         <a href="#/all" :class="{ selected: visibility === 'all' }">All</a>
       </li>
       <li>
-        <a href="#/active" :class="{ selected: visibility === 'active' }"
-          >Active</a
-        >
+        <a href="#/active" :class="{ selected: visibility === 'active' }">Active</a>
       </li>
       <li>
-        <a href="#/completed" :class="{ selected: visibility === 'completed' }"
-          >Completed</a
-        >
+        <a href="#/completed" :class="{ selected: visibility === 'completed' }">Completed</a>
       </li>
     </ul>
-    <button
-      class="clear-completed"
-      @click="removeCompleted"
-      v-show="todos.length"
-    >
+    <button class="clear-completed" @click="removeCompleted" v-show="todos.length">
       Clear completed
     </button>
   </footer>
@@ -188,7 +180,9 @@ button {
   background: #fff;
   margin: 130px 0 40px 0;
   position: relative;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
 .todoapp input::-webkit-input-placeholder {
@@ -423,8 +417,11 @@ button {
   left: 0;
   height: 50px;
   overflow: hidden;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6,
-    0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6,
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.2),
+    0 8px 0 -3px #f6f6f6,
+    0 9px 1px -3px rgba(0, 0, 0, 0.2),
+    0 16px 0 -6px #f6f6f6,
     0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
 

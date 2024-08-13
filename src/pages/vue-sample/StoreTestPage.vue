@@ -9,7 +9,7 @@
     <p v-if="isOver10">{{ count }}가 10보다 커졌습니다.</p>
   </div>
   <div class="grid">
-    <p>counterStoreOptionApi.state.name: {{ counterStoreOptionApi.name}}</p>
+    <p>counterStoreOptionApi.state.name: {{ counterStoreOptionApi.name }}</p>
     <input type="text" v-model="counterStoreOptionApi.name" />
     <p>{{ count }} * 2 = {{ doubleCount }}</p>
     <button @click="counterStoreOptionApi.increment">count 증가</button>

@@ -5,15 +5,34 @@
     </div>
     <div class="text-h5 text-center q-my-md">게임화면</div>
     <div class="flex justify-evenly">
-      <q-btn color="primary" :label="quizLabel" icon="send" class="q-my-md" @click="startLearnMode" />
-      <q-btn color="secondary" label="시험 모드 시작" icon="send" class="q-my-md" @click="startTestMode" />
+      <q-btn
+        color="primary"
+        :label="quizLabel"
+        icon="send"
+        class="q-my-md"
+        @click="startLearnMode"
+      />
+      <q-btn
+        color="secondary"
+        label="시험 모드 시작"
+        icon="send"
+        class="q-my-md"
+        @click="startTestMode"
+      />
     </div>
     <div class="text-h1 text-bold q-my-md text-center" style="min-height: 120px">
       <span>{{ quiz }} </span>
       <span v-if="showAnswer">{{ answer }}</span>
     </div>
     <div class="flex">
-      <q-linear-progress stripe rounded size="50px" color="red" animation-speed="500" :value="progress">
+      <q-linear-progress
+        stripe
+        rounded
+        size="50px"
+        color="red"
+        animation-speed="500"
+        :value="progress"
+      >
         <div class="absolute-full flex flex-center">
           <q-badge color="white" text-color="accent" :label="remainTime" />
         </div>

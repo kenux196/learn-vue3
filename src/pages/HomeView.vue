@@ -68,17 +68,13 @@ function showHiddenMessage() {
     </div>
     <WelcomeMessage />
     <a v-on:click="showHiddenMessage()">여기를 누르면? {{ count }}</a>
-    <span style="margin-left: 10px" v-if="showMessage">
-      오늘은 기분이 어떤가요?</span
-    >
+    <span style="margin-left: 10px" v-if="showMessage"> 오늘은 기분이 어떤가요?</span>
     <div>
       <a v-bind:href="someUrl">네이버 : {{ someUrl }}</a>
     </div>
     <button @click="state.number++">대기번호(+): {{ state.number }}</button>
     <button @click="state.number--">대기번호(-): {{ state.number }}</button>
-    <button @click="personProxy.age++">
-      {{ personProxy.name }}: {{ personProxy.age }}
-    </button>
+    <button @click="personProxy.age++">{{ personProxy.name }}: {{ personProxy.age }}</button>
     <div>
       <p>
         <!-- 계산된 속성은 캐싱이 되어서 값 변경 시에만 재평가 된다. -->

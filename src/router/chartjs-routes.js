@@ -12,8 +12,8 @@ const chartjsRoutes = {
     },
     {
       path: 'echart',
-      component: () => import('@/pages/charjs-sample/EchartPage1.vue')
-    }
+      component: () => import('@/pages/charjs-sample/EchartPage1.vue'),
+    },
   ],
 };
 
