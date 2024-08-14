@@ -51,6 +51,11 @@ const mainMenus = ref([
     link: '/vue',
   },
   {
+    title: 'Vue Library Test',
+    icon: 'laptop',
+    link: '/libs',
+  },
+  {
     title: 'menu.main.gugudan',
     icon: 'toys',
     link: '/gugudan',

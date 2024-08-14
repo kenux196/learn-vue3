@@ -16,6 +16,8 @@ import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
 
 import { useAppStore } from './stores/appStore';
 import { VueQueryPlugin } from 'vue-query';
+// import { QuillEditor } from '@vueup/vue-quill';
+// import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
 const app = createApp(App);
 app.use(router);
@@ -38,6 +40,9 @@ app.use(Quasar, {
 
 // vue query
 app.use(VueQueryPlugin);
+
+// vue quill
+// app.component('QuillEditor', QuillEditor);
 
 // app 레벨의 에러 핸들링 정의 예시
 app.config.errorHandler = (err) => {

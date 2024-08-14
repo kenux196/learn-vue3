@@ -1,4 +1,5 @@
 import chartjsRoutes from './chartjs-routes';
+import libsRoutes from './libs-routes';
 import nestedRoutes from './nested-routes';
 import quasrRoutes from './quasar-routes';
 import vueRoutes from './vue-routes';
@@ -35,6 +36,7 @@ const mainRoutes = [
   quasrRoutes,
   chartjsRoutes,
   vueRoutes,
+  libsRoutes,
   // Always leave this as last one,
   // but you can also remove it
   {
