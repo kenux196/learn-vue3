@@ -3,6 +3,7 @@
     <div class="q-gutter-y-md">
       <q-tabs inline-label align="left" class="bg-primary text-white shadow-2">
         <q-route-tab name="quill" label="vue-quill" to="/libs/quill"></q-route-tab>
+        <q-route-tab name="tiptap" label="tiptap" to="/libs/tiptap"></q-route-tab>
       </q-tabs>
     </div>
     <RouterView />

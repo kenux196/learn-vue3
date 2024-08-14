@@ -6,6 +6,10 @@ const libsRoutes = {
       path: 'quill',
       component: () => import('@/pages/libs-sample/VueQuillTestPage.vue'),
     },
+    {
+      path: 'tiptap',
+      component: () => import('@/pages/libs-sample/TiptapTestPage.vue'),
+    },
   ],
 };
 
