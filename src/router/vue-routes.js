@@ -26,6 +26,10 @@ const vueRoutes = {
       path: 'login',
       component: () => import('@/pages/vue-sample/LoginPage.vue'),
     },
+    {
+      path: 'watcher',
+      component: () => import('@/pages/vue-sample/WatcherTestPage.vue'),
+    },
   ],
 };
 
