@@ -1,1 +1,0 @@
-import{_ as e}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o as t,c}from"./index-BOGjJm7U.js";const r={};function o(a,n){return t(),c("div",null,"Vue Watcher Test Page")}const f=e(r,[["render",o]]);export{f as default};
