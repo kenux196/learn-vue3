@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import dayjs from 'dayjs';
@@ -44,6 +44,8 @@ import 'dayjs/locale/ko';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import useAppStore from '@/stores/appStore';
+import { Builder } from 'builder-pattern';
+import TestClass from '@/utils/TestClass';
 const { t } = useI18n();
 const appStore = useAppStore();
 
@@ -62,6 +64,13 @@ const displayDateTime = (type, date, timezone) => {
   }
   return dayjs(date).tz(timezone).locale(appStore.language).format('YYYY-MM-DD HH:mm');
 };
+
+onMounted(() => {
+  const test = Builder(TestClass).name('kenux').age(20).address('대구').build();
+  console.log('🚀 ~ onMounted ~ 1 test:', test);
+  test.name = 'abc';
+  console.log('🚀 ~ onMounted ~ 2 test:', test);
+});
 </script>
 
 <style lang="scss" scoped></style>

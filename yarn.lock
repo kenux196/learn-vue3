@@ -847,6 +847,11 @@ broadcast-channel@^3.4.1:
     rimraf "3.0.2"
     unload "2.2.0"
 
+builder-pattern@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/builder-pattern/-/builder-pattern-2.2.0.tgz#f1e56f889282486fb5b3852947e91cd09cfe7b79"
+  integrity sha512-cES3qdeBzA4QyJi7rV/l/kAhIFX6AKo3vK66ZPXLNpjcQWCS8sjLKscly8imlfW2YPTo/hquMRMnaWpZ80Kj+g==
+
 call-bind@^1.0.2, call-bind@^1.0.6, call-bind@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/call-bind/-/call-bind-1.0.7.tgz#06016599c40c56498c18769d2730be242b6fa3b9"
