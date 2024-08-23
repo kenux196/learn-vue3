@@ -27,16 +27,8 @@ const vueRoutes = {
       component: () => import('@/pages/vue-sample/LoginPage.vue'),
     },
     {
-      path: 'vue-query',
-      component: () => import('@/pages/vue-sample/VueQueryTestPage.vue'),
-    },
-    {
-      path: 'i18n',
-      component: () => import('@/pages/vue-sample/LanguageTestPage.vue'),
-    },
-    {
-      path: 'export',
-      component: () => import('@/pages/vue-sample/ExportToExcel.vue'),
+      path: 'watcher',
+      component: () => import('@/pages/vue-sample/WatcherTestPage.vue'),
     },
   ],
 };
