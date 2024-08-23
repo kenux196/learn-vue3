@@ -44,8 +44,7 @@ import 'dayjs/locale/ko';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import useAppStore from '@/stores/appStore';
-import { Builder } from 'builder-pattern';
-import TestClass from '@/utils/TestClass';
+import User from '@/domain/User';
 const { t } = useI18n();
 const appStore = useAppStore();
 
@@ -66,10 +65,11 @@ const displayDateTime = (type, date, timezone) => {
 };
 
 onMounted(() => {
-  const test = Builder(TestClass).name('kenux').age(20).address('대구').build();
+  const test = User.create('kenux', 'yun', 47, '대구');
   console.log('🚀 ~ onMounted ~ 1 test:', test);
-  test.name = 'abc';
+  test.updateName('상규', '윤');
   console.log('🚀 ~ onMounted ~ 2 test:', test);
+  test.displayName();
 });
 </script>
 
