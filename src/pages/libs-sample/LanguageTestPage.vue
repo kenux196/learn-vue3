@@ -44,7 +44,7 @@ import 'dayjs/locale/ko';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import useAppStore from '@/stores/appStore';
-import User from '@/domain/User';
+import { User, Team } from '@/domain/User';
 const { t } = useI18n();
 const appStore = useAppStore();
 
@@ -65,11 +65,23 @@ const displayDateTime = (type, date, timezone) => {
 };
 
 onMounted(() => {
-  const test = User.create('kenux', 'yun', 47, '대구');
-  console.log('🚀 ~ onMounted ~ 1 test:', test);
-  test.updateName('상규', '윤');
-  console.log('🚀 ~ onMounted ~ 2 test:', test);
-  test.displayName();
+  const test = new User();
+  console.log('🚀 ~ onMounted ~ test:', test);
+  const user = User.create('kenux', 'yun', 47, '대구');
+  const team = new Team('teamA');
+  user.assignTeam(team);
+  console.log('🚀 ~ onMounted ~ 1 user:', user);
+  user.updateName('상규', '윤');
+  console.log('🚀 ~ onMounted ~ 2 user:', user);
+  user.displayName();
+
+  const jsonString = JSON.stringify(user);
+  console.log('🚀 ~ onMounted ~ jsonString:', jsonString);
+  const parsedObj = JSON.parse(jsonString);
+  console.log('🚀 ~ onMounted ~ parsedObj:', parsedObj);
+  const user2 = User.createFromObject(parsedObj);
+  console.log('🚀 ~ onMounted ~ user2:', user2);
+  user2.displayName();
 });
 </script>
 

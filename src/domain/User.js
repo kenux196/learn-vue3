@@ -6,6 +6,7 @@ class User {
     this.lastName = '';
     this.age = '';
     this.address = '';
+    this.team = null;
   }
 
   updateName(firstName, lastName) {
@@ -17,9 +18,33 @@ class User {
     console.log(`My name is ${this.lastName} ${this.firstName}`);
   }
 
+  assignTeam(team) {
+    this.team = team;
+  }
+
   static create(firstName, lastName, age, address) {
     return Builder(User).firstName(firstName).lastName(lastName).age(age).address(address).build();
   }
+
+  static createFromObject(obj) {
+    const team = new Team();
+    Object.assign(team, obj.team);
+    console.log('🚀 ~ User ~ createFromObject ~ team:', team);
+    const user = new User();
+    Object.assign(user, obj);
+    user.assignTeam(team);
+    return user;
+  }
 }
 
-export default User;
+class Team {
+  constructor(name) {
+    this.name = name;
+  }
+
+  displayTeamName() {
+    console.log('🚀 ~ Team ~ displayTeamName ~ this.name:', this.name);
+  }
+}
+
+export { User, Team };
